@@ -2,31 +2,81 @@
 <html>
 <head>
 	<title>Github Mockup</title>
+	<meta charset="utf-8">
 	<style type="text/css">
+		#main-nav a {
+			color: #FFFFFF;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 10px;
+			vertical-align: middle;
+			display: inline-block;
+		}
+		#main-nav li {
+			display: inline;
+		}
+		#main-nav {
+			background-color: #000000;
+		}
+		#member-table {
+			border: 1px solid;
+		}
+		#member-container {
+			padding-bottom: 40px;
+			padding-top: 40px;
+		}
+		#page-nav a {
+			padding: 30px;
+		}
+		.team-photo {
+			width: 8%;
+			height: 48%;
+			padding-bottom: 12px;
+		}
 		.nav-photo {
 			width: 30px;
 			height: 30px;
+			padding-top: 10px;
+
 		}
 		.profile-photo {
 			width: 48px;
 			height: 48px;
 		}
+		.username {
+			font-size: 85%;
+		}
+		.account-type {
+			padding-left: 10px;
+		}
+		.team-count {
+			padding-left: 10px;
+		}
+		#footer-section-1 {
+			float: left;
+		}
+		#footer-section-2 {
+			float: right;
+		}
+
 	</style>
 </head>
 <body>
 	<header>
-		<nav>
-			<img src="img/github-logo.png" class="nav-photo">
-			<a href="">Pull requests</a>
-			<a href="">Issues</a>
-			<a href="">Marketplace</a>
-			<a href="">Explore</a>
+		<nav id="main-nav">
+			<ul>
+				<img src="img/github-logo.png" class="nav-photo">
+				<li><a href="">Pull Requests</a></li>
+				<li><a href="">Issues</a></li>
+				<li><a href="">Marketplace</a></li>
+				<li><a href="">Explore</a></li>
+			</ul>
 		</nav>
 	</header>
 
-	<img src="img/codeup-text-logo.png" width="8%" height="40%">
+	<img src="img/codeup-text-logo.png" class="team-photo">
 
-	<nav>
+	<nav id="page-nav">
 		<a href="">Repositories</a>
 		<a href="">People</a>
 		<a href="">Teams</a>
@@ -34,42 +84,53 @@
 		<a href="">Settings</a>
 	</nav>
 
-	<table>
-		<tr>
-			<th>Codeup's dev team</th>
-		</tr>
-		<tr>
-			<td><img src="img/rocket-ship.jpg" class="profile-photo"><a href="">Kent Beck</a></td>
-			<td>Member</td>
-			<td>1 teams</td>
-		</tr>
-		<tr>
-			<td><img src="img/codeup-arrow-logo.jpg" class="profile-photo"><a href="">Codeup Instruction Staff</a></td>
-			<td>Member</td>
-			<td>1 teams</td>
-		</tr>
-		<tr>
-			<td><img src="img/purple-avatar.png" class="profile-photo"><a href="">Martin Flower</a></td>
-			<td>Member</td>
-			<td>0 teams</td>
-		</tr>
-	</table>
+	<div id="member-container">
+		<table id="member-table">
+			<tr>
+				<th style="padding: 10px;">Codeup's dev team</th>
+			</tr>
+			<tr>
+				<td><img src="img/rocket-ship.jpg" class="profile-photo"></td>
+				<td><a href="">Kent Beck</a><br><span class="username">KentBeck</span></td>
+				<td class="account-type">Member</td>
+				<td class="team-count">1 teams</td>
+			</tr>
+			<tr>
+				<td><img src="img/codeup-arrow-logo.jpg" class="profile-photo"></td>
+				<td><a href="">Codeup Instruction Staff</a><br><span class="username">CodeupInstructors</span></td>
+				<td class="account-type">Member</td>
+				<td class="team-count">1 teams</td>
+			</tr>
+			<tr>
+				<td><img src="img/purple-avatar.png" class="profile-photo"></td>
+				<td><a href="">Martin Flower</a><br><span class="username"></span></td>
+				<td class="account-type">Member</td>
+				<td class="team-count">0 teams</td>
+			</tr>
+		</table>
+	</div>
 
+	<hr>
 	<footer>
 		<nav>
-			<span>&copy; 2018 GitHub, Inc.</span>
-			<a href="">Terms</a>
-			<a href="">Privacy</a>
-			<a href="">Security</a>
-			<a href="">Status</a>
-			<a href="">Help</a>
-			<a href="">Contact GitHub</a>
-			<a href="">API</a>
-			<a href="">Training</a>
-			<a href="">Shop</a>
-			<a href="">Blog</a>
-			<a href="">About</a>
+			<div id="footer-section-1">
+				<span>&copy; 2018 GitHub, Inc.</span>
+				<a href="">Terms</a>
+				<a href="">Privacy</a>
+				<a href="">Security</a>
+				<a href="">Status</a>
+				<a href="">Help</a>
+			</div>
+			<div id="footer-section-2">
+				<a href="">Contact GitHub</a>
+				<a href="">API</a>
+				<a href="">Training</a>
+				<a href="">Shop</a>
+				<a href="">Blog</a>
+				<a href="">About</a>
+			</div>
 		</nav>
 	</footer>
+
 </body>
 </html>
