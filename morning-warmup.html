@@ -17,5 +17,19 @@
     	console.log(sumOfTwo(2,2));
     </script>
 
+    <script type="text/javascript">
+        // area of triangle function when given three side values
+        function areaOfTriangle(a,b,c) {
+            // this variable stores half the perimeter
+            var half = (a+b+c)/2;
+            // the area is the square root of this
+            var area = Math.sqrt(half * (half-a) * (half-b) * (half-c));
+
+            return area;
+        }
+        // console log to see the result
+        console.log(areaOfTriangle(5, 6, 7));
+    </script>
+
 </body>
 </html>
