@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello World</title>
-	</style>
+	<title>Veridian Aeronautics</title>
 	<link rel="stylesheet" type="text/css" href="css/welcome.css">
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<a href="top"></a>
-	<h1>Welcome to Veridian Dynamics!</h1>
-	<p>
-		At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology</em></strong>.
-	</p>
+	<header>
+		<a href="top"></a>
+		<div>
+			<img src="img/rocket1-t.png" id="header-company-logo">
+		</div>
+
+		<h1 class="fancy-header" id="main-header">Welcome to Veridian Aeronautics!</h1>
+		<div id="slogan-container">
+			<p>
+				At Veridian Aeronautics, <strong>we</strong> explore <em>space</em> with next generation <strong><em>technology</em></strong>.
+			</p>
+		</div>
+	</header>
 	<hr>
-	<h2>Core Values</h2>
-	<ul>
-		<li>Competence</li>
-		<li>Involvment</li>
-		<li>Technology</li>
-	</ul>
-	<h2>Our Process</h2>
-	<ol>
-		<li>Plan</li>
-		<li>Evaluate</li>
-		<li>Implement</li>
-	</ol>
-	<h2>2020 Vision</h2>
-	<ul>
-		<li>Become #1 in Technology</li>
-		<li>Increase Success by 20%</li>
-		<li>Increase Business by 30%</li>
-	</ul>
+
+	<div class="center" id="three-pillars">
+		<h2>Core Values</h2>
+		<ul>
+			<li>Competence</li>
+			<li>Involvment</li>
+			<li>Technology</li>
+		</ul>
+
+		<h2>Our Process</h2>
+		<ol>
+			<li>Plan</li>
+			<li>Evaluate</li>
+			<li>Implement</li>
+		</ol>
+		<h2>2020 Vision</h2>
+		<ul>
+			<li>Become #1 in Technology</li>
+			<li>Increase Success by 20%</li>
+			<li>Increase Business by 30%</li>
+		</ul>
+	</div>
 	<hr>
-	<h2>Company Vision</h2>
-	<!-- review positioning from the prework. Specifically the shifting left && review from previous file submission on image resizing-->
-	<div class="image-container">
-		<img src="img/brainstorm.jpg">
-		<img src="img/thinking_man.jpg">
+
+	<h2 class="center">Company Vision</h2>
+
+	<div id="company-vision-container">
+		<div class="image-container">
+			<img src="img/space-rover.jpg" class="company-vision-image">
+			<img src="img/space-simulator.jpg" class="company-vision-image">
+		</div>
+		<div class="image-container">
+			<img src="img/space-spaceship.jpg" class="company-vision-image">
+			<img src="img/space-highway.jpg" class="company-vision-image">
+		</div>
 	</div>
-	<div class="image-container">
-		<img src="img/sunset.jpg">
-		<img src="img/office_meeting.jpg">
-	</div>
-	<h2>Our Product</h2>
-	<table>
-		<tr>
+
+
+	<h2 class="center">Our Product</h2>
+	<table class="center" id="product-table">
+		<tr class="table-header">
 			<th>Plan</th>
 			<th>Price</th>
 			<th>Features</th>
 		</tr>
-		<tr>
+		<tr class="table-product-package">
 			<td>Starter</td>
 			<td>$99</td>
-			<td>Base Technology</td>
+			<td>Space Basics</td>
 		</tr>
-		<tr>
+		<tr class="table-product-package">
 			<td>Advanced</td>
 			<td>$199</td>
-			<td>Additional Features</td>
+			<td>Basics + Course Training</td>
 		</tr>
-		<tr>
+		<tr class="table-product-package">
 			<td>Premium</td>
 			<td>$499</td>
-			<td>Unlimited Support</td>
+			<td>Starter + Advanced + Flight</td>
 		</tr>
 	</table>
-	<!-- look up how to add trademark (TM) superscript to paragraph text html -->
-	<p><em>All products come with our quality gaurantee &trade;.</em></p>
-	<a href="#top">Go to the top of the page.</a>
+
+	<p class="center"><em>All products come with our quality gaurantee &trade;.</em></p>
+	<a href="#top" class="back-to-top">Go to the top of the page.</a>
 </body>
 </html>
