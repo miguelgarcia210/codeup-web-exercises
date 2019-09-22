@@ -73,4 +73,5 @@ fieldset {
 
 .btn-block {
     /* This element should use 100% of the width */
+    width: 100%;
 }
