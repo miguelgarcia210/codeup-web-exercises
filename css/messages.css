@@ -1,4 +1,5 @@
 :root {
+    /*feedback-box colors*/
     --bg-info: rgb(206,223,254);
     --text-info:rgb(68,63,153);
     --bg-success:rgb(208,242,219);
@@ -7,7 +8,6 @@
     --text-warning:rgb(175,161,84);
     --bg-error:rgb(249,211,215);
     --text-error:rgb(151,62,83);
-
 }
 
 body, html {
