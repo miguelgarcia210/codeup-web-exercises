@@ -37,30 +37,30 @@ body, html {
     /*actual background-color and text color for message-info scope set: universal through :root*/
     /*background-color: rgb(206,223,254);*/
     /*color: rgb(68,63,153);*/
-    background: var(--bg-info);
-    color: var(--text-info);
+    background: var(--bg-info, blue);
+    color: var(--text-info, black);
 }
 
 .message-success {
     /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(208,242,219);*/
     /*color: rgb(61,137,91);*/
-    background-color: var(--bg-success);
-    color: var(--text-success);
+    background-color: var(--bg-success, green);
+    color: var(--text-success, black);
 }
 
 .message-warning {
     /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(252,250,203);*/
     /*color: rgb(175,161,84);*/
-    background-color: var(--bg-warning);
-    color: var(--text-warning);
+    background-color: var(--bg-warning, yellow);
+    color: var(--text-warning, black);
 }
 
 .message-error {
     /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(249,211,215);*/
     /*color: rgb(151,62,83);*/
-    background-color: var(--bg-error);
-    color: var(--text-error);
+    background-color: var(--bg-error, red);
+    color: var(--text-error, black);
 }
