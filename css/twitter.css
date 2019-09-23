@@ -25,7 +25,20 @@ header {
 a {
     color: var(--link-color);
 }
+
+.nav-item {
+    /* Change display to inline-block */
+    display: inline-block;
+    /* Add padding of 1.5em */
+    padding: 1.5em;
+}
 .top-nav {
+    /* Make position fixed */
+    position: fixed;
+    /* Utilize 100% width */
+    width: 100%;
+    /* z-index to make navBar on top always */
+    z-index: 1000;
     background: var(--light-bg);
 }
 .nav {
@@ -42,7 +55,10 @@ a {
     color: var(--link-color);
 }
 .profile {
+    /* Give a height of 80px to this class */
+    height: 80px;
     background: var(--light-bg);
+    position: relative;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -51,6 +67,10 @@ a {
     font-weight: bold;
     padding: 8px;
     border-radius: 5px;
+    /* center the button */
+    margin: auto 0;
+    /*position: relative;*/
+    /*top: 50%;*/
 }
 .btn-large {
     font-size: 1.3em;
@@ -65,4 +85,16 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+/* Start Coding */
+.profile-form {
+    float: right;
+    line-height: 80px;
+}
+
+.profile-image {
+    /* Create this class and set position to absolute and center avatar */
+    /* Previously set .profile to relative positioning */
+    position: absolute;
+    top: -50%;
 }
