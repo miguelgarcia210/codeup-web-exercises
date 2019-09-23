@@ -34,7 +34,7 @@ body, html {
 }
 
 .message-info {
-    /*actual background-color and text color for message-info scope set: universal*/
+    /*actual background-color and text color for message-info scope set: universal through :root*/
     /*background-color: rgb(206,223,254);*/
     /*color: rgb(68,63,153);*/
     background: var(--bg-info);
@@ -42,7 +42,7 @@ body, html {
 }
 
 .message-success {
-    /*actual background-color and text color for message-info scope set: universal*/
+    /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(208,242,219);*/
     /*color: rgb(61,137,91);*/
     background-color: var(--bg-success);
@@ -50,7 +50,7 @@ body, html {
 }
 
 .message-warning {
-    /*actual background-color and text color for message-info scope set: universal*/
+    /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(252,250,203);*/
     /*color: rgb(175,161,84);*/
     background-color: var(--bg-warning);
@@ -58,7 +58,7 @@ body, html {
 }
 
 .message-error {
-    /*actual background-color and text color for message-info scope set: universal*/
+    /*actual background-color and text color for message-info scope set: universal :root*/
     /*background-color: rgb(249,211,215);*/
     /*color: rgb(151,62,83);*/
     background-color: var(--bg-error);
