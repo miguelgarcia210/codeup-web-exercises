@@ -67,10 +67,6 @@ a {
     font-weight: bold;
     padding: 8px;
     border-radius: 5px;
-    /* center the button */
-    margin: auto 0;
-    /*position: relative;*/
-    /*top: 50%;*/
 }
 .btn-large {
     font-size: 1.3em;
@@ -88,6 +84,7 @@ a {
 }
 /* Start Coding */
 .profile-form {
+    /* Float right and make same height as .profile */
     float: right;
     line-height: 80px;
 }
@@ -97,4 +94,79 @@ a {
     /* Previously set .profile to relative positioning */
     position: absolute;
     top: -50%;
+}
+
+.profile-details {
+    /* Set element to float */
+    float: left;
+    /* Set width to 25% */
+    /* Use calc() to subtract the margin from the width.
+        This is accounted so .profile-details, .timeline, .who-to-follow can fit within 100% the width of the page */
+    width: calc(25% - 1em);
+    /* Set margin to .5em to both sides and 0 for top and bottom */
+    margin: 0 .5em;
+}
+
+.timeline {
+    /* Set element to float */
+    float: left;
+    /* Set width to 50% */
+    /* Use calc() to subtract the margin from the width. */
+    width: calc(50% - 1em);
+    /* Set margin to .5em to both sides and 0 for top and bottom */
+    margin: 0 .5em;
+}
+
+.who-to-follow {
+    /* Set element to float */
+    float: right;
+    /* Set width to 25% */
+    /* Use calc() to subtract the margin from the width. */
+    width: calc(25% - 1em);
+    /* Set margin to .5em to both sides and 0 for top and bottom */
+    margin: 0 .5em;
+}
+
+.container {
+    margin: 2em;
+}
+
+.media {
+    /* Use 100% width of its container */
+    width: 100%;
+    /* Change background to light-bg */
+    background-color: var(--light-bg);
+    /* Should have a bottom border of 1px with with color --separator-color */
+    border-bottom: 1px solid var(--separator-color);
+    /* Must have padding of .5em */
+    padding: .5em;
+    overflow: auto;
+}
+
+.media-image {
+    /* Maximum width should be 50px, and it should float */
+    max-width: 50px;
+    float: left;
+    /* Must have a margin top of 1.33em */
+    margin-top: 1.33em;
+}
+
+.media-body {
+    /* Use calc() to subtract the width of the image
+        this will account for the image and allow the media-body to be next to the image */
+    width: calc(100% - 50px);
+    /* Media-body should float also */
+    float: left;
+}
+
+.profile-items {
+    /* Remove padding */
+    padding: 0;
+    /* Remove bullets */
+    list-style: none;
+}
+
+.profile-entry {
+    /* Add a margin of .5em */
+    margin: .5em;
 }
