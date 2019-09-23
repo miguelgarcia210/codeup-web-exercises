@@ -1,0 +1,66 @@
+:root {
+    --bg-info: rgb(206,223,254);
+    --text-info:rgb(68,63,153);
+    --bg-success:rgb(208,242,219);
+    --text-success:rgb(61,137,91);
+    --bg-warning:rgb(252,250,203);
+    --text-warning:rgb(175,161,84);
+    --bg-error:rgb(249,211,215);
+    --text-error:rgb(151,62,83);
+
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.width-80 {
+    /*sets container width to 80% and centered*/
+    margin: 0 auto;
+    width: 80%;
+}
+
+.feedback-box {
+    /*sets styling for each feedback-box*/
+    box-sizing: border-box;
+    padding: 5px 5px;
+    border: 2px solid rgb(222,222,223);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.message-info {
+    /*actual background-color and text color for message-info scope set: universal*/
+    /*background-color: rgb(206,223,254);*/
+    /*color: rgb(68,63,153);*/
+    background: var(--bg-info);
+    color: var(--text-info);
+}
+
+.message-success {
+    /*actual background-color and text color for message-info scope set: universal*/
+    /*background-color: rgb(208,242,219);*/
+    /*color: rgb(61,137,91);*/
+    background-color: var(--bg-success);
+    color: var(--text-success);
+}
+
+.message-warning {
+    /*actual background-color and text color for message-info scope set: universal*/
+    /*background-color: rgb(252,250,203);*/
+    /*color: rgb(175,161,84);*/
+    background-color: var(--bg-warning);
+    color: var(--text-warning);
+}
+
+.message-error {
+    /*actual background-color and text color for message-info scope set: universal*/
+    /*background-color: rgb(249,211,215);*/
+    /*color: rgb(151,62,83);*/
+    background-color: var(--bg-error);
+    color: var(--text-error);
+}
