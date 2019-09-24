@@ -38,29 +38,54 @@ h2, h3 {
 
 section {
     /* enter needed declarations here */
+
+    /* Change display to flex: 'section' is the parent of the 'flex items' we want to manipulate */
+    display: flex;
 }
 
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
     /* enter needed declarations here */
+
+    /* Control horizontal positioning of elements 'justify' */
+    justify-content: space-between;
+
+    /* align 'flex items' to the center of 'flex-container' */
+    align-items: center;
+
+    /* Set a top+bottom margin for section 1 */
+    margin: 10px 0;
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+
+    /* Control cross axis alignment of the last 'flex item' in the first section */
+    align-self: flex-start;
 }
 
 .purple-box {
     background: fuchsia;
     width: 3em;
     height: 1em;
+
+    /* Set top+bottom margin for .purple-box (NOT SURE)************************************** */
+    margin: 10px 0;
 }
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+
+    /*Reference: https://css-tricks.com/flex-grow-is-weird/*/
+    /*Grow 'flex-items' to take up entire width of parent container*/
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+
+    /*Grow 'flex-items' to take up entire width of parent container*/
+    flex-grow: 1;
 }
 
 .blue-box {
@@ -71,11 +96,21 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+
+    /* Set top+bottom margin for section 3 */
+    margin: 10px 0;
+
+    /* Added a border for easy display */
+    border: 1px solid black;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
 
+    /*Kept trying to 'justify-content' but then couldn't use 'align-self'
+    twice to 'center' and 'flex-start' then realized 'flex-grow' can be used */
+    align-self: center;
+    flex-grow: 1;
 }
 
 .orange-circle {
@@ -91,6 +126,7 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+
 }
 
 .large-brown-box:nth-of-type(2) {
