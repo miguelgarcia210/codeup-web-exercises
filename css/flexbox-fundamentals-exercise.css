@@ -165,7 +165,7 @@ section:nth-of-type(6) {
     /* Control position along cross axis */
     align-items: center;
 
-    /* Prevent overflow; contain items withing flex-container */
+    /* Prevent overflow; contain items within flex-container */
     flex-wrap: wrap;
 }
 
