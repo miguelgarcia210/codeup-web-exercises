@@ -52,17 +52,26 @@ body {
 /*flex solution*/
 .cover {
     /* flex container */
+
+    /* Make this container a flex-box */
     display: flex;
+
+    /* Position flex-items across the main axis (x-axis:row) */
     justify-content: center;
+
+    /* Position flex-items across the cross axis (y-axis:row) */
     align-items: center;
 }
 .flex-form {
     /* flex items */
 
-
-
+    /* Default for line elements in a flex box is 'stretch'
+    therefore, labels automatically 'stretch' to line-height of .flex-form */
+    display: flex;
 }
 .destination {
     /* bigger item */
 
+    /* Initialize initial space needed before available space is distributed */
+    flex-basis: 30%;
 }
