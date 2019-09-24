@@ -34,6 +34,10 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
+    /* Did not use flex properties on this class initially.
+    Implemented 'display: flex' to 'section' element instead */
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }
 
 section {
