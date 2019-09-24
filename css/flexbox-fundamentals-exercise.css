@@ -126,15 +126,22 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
-
+    flex-basis: 30%;
 }
 
 .large-brown-box:nth-of-type(2) {
-    margin: 0 1em;
+    /* Makes box unaligned: changed 1em -> 1.5em */
+    margin: 0 1.5em;
 }
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
+
+    /*Position along main axis*/
+    justify-content: space-evenly;
+
+    /* Set top+bottom margin for section 5 */
+    margin: 10px 0;
 }
 
 .yellow-box {
@@ -147,6 +154,19 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+
+    /* ONLY USEFUL IF WRAPPING
+     Control space along cross axis. Items are (direction: row) -> cross axis = y-axis */
+    align-content: space-evenly;
+
+    /* Control horizontal positioning */
+    justify-content: space-between;
+
+    /* Control position along cross axis */
+    align-items: center;
+
+    /* Prevent overflow */
+    flex-wrap: wrap;
 }
 
 .grey-box {
