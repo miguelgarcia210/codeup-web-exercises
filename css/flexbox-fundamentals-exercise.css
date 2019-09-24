@@ -126,12 +126,13 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
-    flex-basis: 30%;
+
+    /*Grow 'flex-items' w/set class to evenly proportion within parent flex-container */
+    flex-grow: 1;
 }
 
 .large-brown-box:nth-of-type(2) {
-    /* Makes box unaligned: changed 1em -> 1.5em */
-    margin: 0 1.5em;
+    margin: 0 1em;
 }
 
 section:nth-of-type(5) {
