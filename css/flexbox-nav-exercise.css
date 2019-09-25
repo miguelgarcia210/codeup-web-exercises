@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -17,7 +21,9 @@ nav ul {
 .top-nav {
     /* Allow it to utilize 100% width */
     width: 100%;
-    height: 50px;
+
+    /* Removed Explicit Height */
+    /*height: 50px;*/
     background-color: #C1C1C1;
     z-index: 1000;
     position: fixed;
@@ -52,6 +58,14 @@ nav ul {
 .nav-item {
     margin: 0 5px;
     padding: 0;
+}
+
+#nav-logo-text {
+    /* Set Logo Font Size */
+    font-size: 3em;
+
+    /* Set top+bottom padding */
+    padding: .2em 0;
 }
 
 #left-nav-section {
