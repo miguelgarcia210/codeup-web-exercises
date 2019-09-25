@@ -5,83 +5,72 @@
 body {
     margin: 0;
     padding: 0;
-    height: 5000px;
-    background: #87CEFA;
+    position: relative;
 }
 a {
     display: inline-block;
+    padding: 10px;
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
 }
 
-nav ul {
-    /* Make nav ul's have no bullet styling */
-    list-style: none;
+#nav-logo-text a {
+    font-family: 'Montserrat', sans-serif;
+}
 
-    /* Removes default margin/padding for ul's */
+ul.nav-list-style {
     margin: 0;
-    padding: 0;
+    padding: 5px;
 }
 
-.top-nav {
-    /* Allow it to utilize 100% width */
-    width: 100%;
+a:link {
+    color: black;
+}
 
-    /* Removed Explicit Height */
-    /*height: 50px;*/
-    background-color: #C1C1C1;
-    z-index: 1000;
-    position: fixed;
-    /* Makes content within nav a flex-item */
-    display: flex;
+a:hover {
+    color: blue;
+}
 
-    /* Center contents across the cross axis */
-    align-items: center;
+.nav-list-style {
+    list-style: none;
 }
 
 .left-nav-list {
-    /* Make content controllable and flex-direction: row */
     display: flex;
-
-    /* Give space to content on both sides between elements*/
-    margin: 0 1em;
 }
 
 .right-nav-list {
     display: flex;
-    margin: 0 1em;
-
-    /* Position content to the end of flex-container */
-    justify-content: flex-end;
 }
 
-.company-logo {
+#top-nav-container {
+    width: 100%;
+    background-color: #C1C1C1;
+    z-index: 1000;
+
+    position: relative;
     display: flex;
-    justify-content: center;
-}
-
-.nav-item {
-    margin: 0 5px;
-    padding: 0;
-}
-
-#nav-logo-text {
-    /* Set Logo Font Size */
-    font-size: 3em;
-
-    /* Set top+bottom padding */
-    padding: .2em 0;
+    align-items: center;
 }
 
 #left-nav-section {
-    width: 35%;
+    display: flex;
     margin-right: auto;
 }
 
 #right-nav-section {
-    width: 35%;
+    display: flex;
     margin-left: auto;
 }
 
 #company-logo-section {
-    width: 30%;
 }
 
+#nav-logo-text {
+    font-size: 3em;
+    padding: .2em 0;
+    position: absolute;
+    top: -29px;
+    right: calc(50% - 70px);
+
+}

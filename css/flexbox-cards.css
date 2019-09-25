@@ -71,14 +71,11 @@ a {
     /* Set display to flex-container */
     display: flex;
 
-    /* Set the margins for the content */
-    margin: 1.5em auto;
+    align-items: center;
 }
 
 .card {
     /* This is a flex item */
 
-    /* Set margin for top+bottom to auto
-        and the sides to 1em */
-    margin: auto 1em;
+    flex-basis: 100%;
 }
