@@ -8,6 +8,9 @@ body {
     height: 5000px;
     background: #87CEFA;
 }
+a {
+    display: inline-block;
+}
 
 nav ul {
     /* Make nav ul's have no bullet styling */
@@ -70,10 +73,12 @@ nav ul {
 
 #left-nav-section {
     width: 35%;
+    margin-right: auto;
 }
 
 #right-nav-section {
     width: 35%;
+    margin-left: auto;
 }
 
 #company-logo-section {
