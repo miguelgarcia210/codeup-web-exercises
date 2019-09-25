@@ -14,10 +14,6 @@ nav ul {
     padding: 0;
 }
 
-nav a {
-    padding: 10px;
-}
-
 .top-nav {
     /* Allow it to utilize 100% width */
     width: 100%;
@@ -38,16 +34,14 @@ nav a {
 
     /* Give space to content on both sides between elements*/
     margin: 0 1em;
-
 }
 
 .right-nav-list {
     display: flex;
     margin: 0 1em;
 
-    /* Position content to the end of container */
+    /* Position content to the end of flex-container */
     justify-content: flex-end;
-
 }
 
 .company-logo {
@@ -62,7 +56,6 @@ nav a {
 
 #left-nav-section {
     width: 35%;
-
 }
 
 #right-nav-section {
