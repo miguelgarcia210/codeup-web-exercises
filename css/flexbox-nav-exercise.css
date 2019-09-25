@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 5000px;
+    background: #87CEFA;
+}
+
+nav ul {
+    /* Make nav ul's have no bullet styling */
+    list-style: none;
+
+    /* Removes default margin/padding for ul's */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    padding: 10px;
+}
+
+.top-nav {
+    /* Allow it to utilize 100% width */
+    width: 100%;
+    height: 50px;
+    background-color: #C1C1C1;
+    z-index: 1000;
+    position: fixed;
+    /* Makes content within nav a flex-item */
+    display: flex;
+
+    /* Center contents across the cross axis */
+    align-items: center;
+}
+
+.left-nav-list {
+    /* Make content controllable and flex-direction: row */
+    display: flex;
+
+    /* Give space to content on both sides between elements*/
+    margin: 0 1em;
+
+}
+
+.right-nav-list {
+    display: flex;
+    margin: 0 1em;
+
+    /* Position content to the end of container */
+    justify-content: flex-end;
+
+}
+
+.company-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0 5px;
+    padding: 0;
+}
+
+#left-nav-section {
+    width: 35%;
+
+}
+
+#right-nav-section {
+    width: 35%;
+}
+
+#company-logo-section {
+    width: 30%;
+}
+
