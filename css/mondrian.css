@@ -1,54 +1,96 @@
 body {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*text-align: center;*/
 }
-
-main div {
-    border: 1px solid black;
-}
-
 
 main {
+    display: inline-block;
+
+    /* Create same effect seen on image */
+    border: 1px solid #E8E8E8;
+    border-radius: 15px;
+    /* https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+    box-shadow: 0 0 15px lightgrey;
+    padding: 10px;
+
+}
+
+#grid-container div {
+    border: 3px solid black;
+}
+
+
+#grid-container {
     display: inline-grid;
+
+    /* Set grid container width/height*/
     height: 500px;
     width: 500px;
+    /* Create our grid */
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(8,1fr);
+    /* Set container properties */
     background-color: lightgreen;
+    border: 3px solid black;
+}
+
+.box-style {
+    /* Flex properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Text Properties */
+    font-size: 2em;
+
+     /*Hide text */
+    color: transparent;
 }
 
 #box-1 {
     background-color: #314679;
+    /* Shorthand grid-area: row-start / column-start / row-end / column-end */
     grid-area: 1 / 1 / span 2 / span 2;
 }
 
 #box-2 {
     background-color: #DA202A;
+    grid-area: 1 / 3 / span 3 / -1;
 }
 
 #box-3 {
     background-color: #FBCA31;
+    grid-area: 3 / 1 / span 3 / span 2;
 }
 
 #box-4 {
     background-color: #FFFFFF;
+    grid-area: 4 / 3 / span 4 / span 2;
 }
 
 #box-5 {
     background-color: #FFFFFF;
+    grid-area: 4 / 5 / span 2 / -1;
 }
 
 #box-6 {
     background-color: #FFFFFF;
+    grid-area: 6 / 1 / span 2 / span 2;
 }
 
 #box-7 {
     background-color: #FBCA31;
+    grid-area: 6 / 5 / span 2 / -1;
 }
 
 #box-8 {
     background-color: #DA202A;
+    grid-area: 8 / 1 / -1 / span 2;
 }
 
 #box-9 {
     background-color: #314679;
+    grid-area: 8 / 3 / -1 / -1;
 }
