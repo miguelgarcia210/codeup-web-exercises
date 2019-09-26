@@ -31,21 +31,29 @@ ul {
 header {
     background: purple;
     /* TODO: define the grid area of header such that it takes up the first row and middle three columns */
+    grid-area: 1 / 2 / span 1 / span 3;
 }
 
 nav {
     /* TODO: define the grid area of nav such that it takes up the second column of the second row  */
+    grid-area: 2 / 2 / span 1 / -1 ;
+
 }
 
 main {
     /* TODO: define the grid area of main such that it takes up the columns 3 and 4 of the second row  */
+    grid-area: 2 / 3 / span 1 / span 2;
     /* TODO: make main a grid container as well */
+    display: grid;
     /* TODO: define main to contain three columns that together take up equally the full width of main and have a 1em gap between grid items */
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1em;
     overflow: auto;
 }
 
 header ul {
     /* TODO: use flex box to horizontally line up all list items */
+    display: flex;
 }
 
 header a {
@@ -54,7 +62,7 @@ header a {
 
 header ul li:nth-of-type(2) {
     /* TODO: uncomment the next line and add a value which causes Flexbox to automatically fill in extra space on it's left side */
-    /*margin-left: ;*/
+    margin-left: auto;
     border-right: 1px solid white;
 }
 
@@ -66,6 +74,7 @@ header a:hover {
 .header-background {
     background: purple;
     /* TODO: define the grid area of this element to take up the entire first row of the .container grid  */
+    grid-area: 1 / 1 / span 1 / -1;
 }
 
 nav ul {
@@ -110,6 +119,8 @@ nav a:hover {
     border-radius: 10px;
     position: relative;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
+    /* transition border-color has already been set in .card:hover */
+    transition: color .2s;
 }
 
 .card:hover {
