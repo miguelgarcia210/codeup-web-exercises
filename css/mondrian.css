@@ -17,39 +17,38 @@ main {
 }
 
 #box-1 {
-    grid-column: 1 / span 3;
-    grid-row: 1 / 3;
-
+    background-color: #314679;
+    grid-area: 1 / 1 / span 2 / span 2;
 }
 
 #box-2 {
-
+    background-color: #DA202A;
 }
 
 #box-3 {
-
+    background-color: #FBCA31;
 }
 
 #box-4 {
-
+    background-color: #FFFFFF;
 }
 
 #box-5 {
-
+    background-color: #FFFFFF;
 }
 
 #box-6 {
-
+    background-color: #FFFFFF;
 }
 
 #box-7 {
-
+    background-color: #FBCA31;
 }
 
 #box-8 {
-
+    background-color: #DA202A;
 }
 
 #box-9 {
-
+    background-color: #314679;
 }
