@@ -39,13 +39,17 @@ nav {
     /* entire row */
     /*grid-area: 2 / 2 / span 1 / -1 ;*/
     /*entire column "correct" */
-    grid-area: 2 / 2 / span 1 / 3;
+    /*grid-area: 2 / 2 / span 1 / 3;*/
+    /* Class instructed */
+    grid-area: 2 / 2 / 3 / 3;
     /*why doesn't' this make the row end the last row?*/
     /*grid-area: 2 / 2 / -1 / 3; */
 }
 
 main {
     /* TODO: define the grid area of main such that it takes up the columns 3 and 4 of the second row  */
+    /* Class instructed */
+    /*grid-area: 2 / 3 / 3 / 5;*/
     grid-area: 2 / 3 / span 1 / span 2;
     /* TODO: make main a grid container as well */
     display: grid;
@@ -78,6 +82,8 @@ header a:hover {
 .header-background {
     background: purple;
     /* TODO: define the grid area of this element to take up the entire first row of the .container grid  */
+    /* Class instructed */
+    /*grid-area: 1 / 1 / 2 / -1;*/
     grid-area: 1 / 1 / span 1 / -1;
 }
 
@@ -124,7 +130,7 @@ nav a:hover {
     position: relative;
     /* TODO: add a property that causes a transition of the border from lightgrey to near black in .2 seconds */
     /* transition border-color has already been set in .card:hover */
-    transition: color .2s;
+    transition: .2s;
 }
 
 .card:hover {
