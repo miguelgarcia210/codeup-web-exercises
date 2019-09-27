@@ -6,12 +6,16 @@ body {
     background-color: lightgrey;
     display: grid;
     grid-template-columns: 15em repeat(3, 1fr);
-    grid-template-rows: 10em 1fr 10em;
+    grid-template-rows: 10em 1fr 3em 10em;
     height: 100vh;
 }
+
+/* === HEADER SETTINGS === */
+
 #header-container {
     /* Area in body grid */
     grid-area: 1 / 1 / 2 / -1;
+    /* Create grid within container */
     display: grid;
     grid-template-rows: 1fr 40px;
 }
@@ -22,4 +26,39 @@ body {
 }
 #top-nav-list {
     display: flex;
+}
+
+/* === SIDE-NAV-CONTAINER SETTINGS === */
+#side-nav-container {
+    /* Area in body grid */
+    grid-area: 2 / 1 / -1 / 2;
+}
+
+/* === MAIN-CONTAINER SETTINGS === */
+#main-container {
+    /* Area in body grid */
+    grid-area: 2 / 2 / 3 / 4;
+}
+
+/* === ADS-CONTAINER SETTINGS === */
+#ads-container {
+    /* Area in body grid */
+    grid-area: 2 / 4 / 3 / -1;
+}
+
+/* === PAGE-NUMBER-NAV SETTINGS === */
+#page-number-nav {
+    /* Area in body grid */
+    grid-area: 3 / 2 / 4 / -1;
+}
+
+#page-number-list {
+    display: flex;
+}
+
+/* === FOOTER-CONTAINER SETTINGS === */
+
+#footer-container {
+    /* Area in body grid */
+    grid-area: 4 / 2 / -1 / -1;
 }
