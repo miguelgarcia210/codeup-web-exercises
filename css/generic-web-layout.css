@@ -110,6 +110,19 @@ body {
     grid-area: 2 / 2 / 3 / 4;
 }
 
+#page-content h2 {
+    color: #328F83;
+}
+
+section {
+    margin-bottom: 10em;
+}
+
+#page-content {
+    border: 1px solid black;
+    padding: 10px;
+}
+
 /* === ADS-CONTAINER SETTINGS === */
 #ads-container {
     /* Area in body grid */
