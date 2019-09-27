@@ -19,3 +19,43 @@ body {
     height: 100vh;
     grid-gap: 10px;
 }
+
+#one {
+    grid-area: 1 / 1 / 2 / -1;
+}
+
+#two {
+    grid-area: 2 / 1 / -1 / 2;
+}
+
+#three {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#four {
+    grid-area: 2 / 3 / 3 / -1;
+}
+
+#five {
+    grid-area: 3 / 2 / 4 / 4;
+}
+
+#six {
+    grid-area: 3 / 4 / 4 / -1;
+}
+
+#seven {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+#eight {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+#nine {
+    grid-area: 4 / 4 / 5 / -1;
+}
+
+#ten {
+    grid-area: 5 / 2 / -1 / -1;
+}
