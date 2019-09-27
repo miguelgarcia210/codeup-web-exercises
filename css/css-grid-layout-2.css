@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.box-styling {
+    background-color: #9ACD32;
+    padding: 20px;
+}
+
+#main-content {
+    display: grid;
+    grid-area: header;
+    grid-template-columns: 20% 1fr 1fr;
+    grid-template-rows: 80px 1fr repeat(2, 70px);
+    height: 100vh;
+    grid-gap: 10px;
+}
+
+#main-header {
+    grid-area: 1 / 1 / 2 / -1;
+}
+
+#main-nav {
+    grid-area: 2 / 1 / -2 / 2;
+}
+
+#main-article {
+    grid-area: 2 / 2 / 3 / -1;
+}
+
+#main-ads {
+    grid-area: 3 / 2 / 4 / -1;
+}
+
+#main-footer {
+    grid-area: -2 / 1 / -1 / -1;
+}
