@@ -63,6 +63,45 @@ body {
 #side-nav-container {
     /* Area in body grid */
     grid-area: 2 / 1 / -1 / 2;
+    background-color: #F0F0F0;
+
+}
+
+#side-nav-list {
+    list-style: none;
+    /* Set margin to 0 */
+    margin: 0;
+    /* Remove default padding */
+    padding: 0;
+}
+
+#side-nav-list a {
+    text-decoration: none;
+    color: black;
+    /* Change default display:inline to inline-block to expand clickable space */
+    display: inline-block;
+    /* Set links to use 100% of container width */
+    width: 100%;
+    padding: 10px 15px;
+
+}
+
+#side-nav-list a:hover {
+    background-color: #D3D3D3;
+    font-size: 20px;
+}
+/* This is correct but leaves empty un-clickable space */
+/* --- IF ACTIVE, COMMENT SELECTOR CSS BELOW "#side-nav-list li:nth-child(1) a:nth-child(1)" --- */
+/* Gives extra space to first li item, 'Menu', from following li items. Plus gives a bit more space from the top-nav-container*/
+
+/*#side-nav-list li:nth-child(1) {*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/* Selects the <a> tag in the first <li> tag from the id selector */
+#side-nav-list li:nth-child(1) a:nth-child(1){
+    padding: 20px 15px;
 }
 
 /* === MAIN-CONTAINER SETTINGS === */
