@@ -7,8 +7,10 @@ body {
 }
 
 .box-styling {
-    background-color: #9ACD32;
-    padding: 20px;
+    background-color: #FFD700;
+    padding: 10px;
+    font-size: 3em;
+    color: white;
 }
 
 #main-content {
