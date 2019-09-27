@@ -14,28 +14,8 @@ body {
 #main-content {
     display: grid;
     grid-area: header;
-    grid-template-columns: ;
-    grid-template-rows: ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
     height: 100vh;
     grid-gap: 10px;
-}
-
-#main-header {
-    grid-area: ;
-}
-
-#main-nav {
-    grid-area: ;
-}
-
-#main-article {
-    grid-area: ;
-}
-
-#main-ads {
-    grid-area: ;
-}
-
-#main-footer {
-    grid-area: ;
 }
