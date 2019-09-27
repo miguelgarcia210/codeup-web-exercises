@@ -15,6 +15,7 @@ body {
 #header-container {
     /* Area in body grid */
     grid-area: 1 / 1 / 2 / -1;
+    background-color: #323232;
     /* Create grid within container */
     display: grid;
     grid-template-rows: 1fr 40px;
@@ -23,10 +24,40 @@ body {
 #top-nav-container {
     /* Area in header-container */
     grid-area: 2 / 1 / 3 / -1;
+    background-color: #000000;
+    /* Make container display:flex to enable positioning properties */
+    display: flex;
+    align-items: center;
 }
 #top-nav-list {
+    /* Make list display:flex to enable flex-direction */
     display: flex;
+    list-style: none;
+    /* Remove browser default padding */
+    padding: 0;
+    /* Set margin to 0 */
+    margin: 0;
 }
+
+#top-nav-list a {
+    text-decoration: none;
+    /* Change default display:inline to inline-block to expand clickable space */
+    display: inline-block;
+    /* Set desired clickable space by adding padding */
+    padding: 10px 15px;
+    /* Change default link color */
+    color: #FFFFFF;
+}
+
+#top-nav-list a:hover{
+    color: yellow;
+    background-color: #333333;
+}
+#top-nav-item a:visited {
+    color: white;
+}
+
+
 
 /* === SIDE-NAV-CONTAINER SETTINGS === */
 #side-nav-container {
