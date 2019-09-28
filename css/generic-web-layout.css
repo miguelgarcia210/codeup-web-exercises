@@ -50,7 +50,7 @@ body {
 }
 
 #top-nav-list a:hover{
-    color: yellow;
+    color: #FFC316;
     background-color: #333333;
 }
 #top-nav-item a:visited {
@@ -88,6 +88,7 @@ body {
 
 #side-nav-list a:hover {
     background-color: #D3D3D3;
+    color: #7DB249;
     font-size: 20px;
 }
 /* This is correct but leaves empty un-clickable space */
@@ -114,12 +115,12 @@ body {
     color: #328F83;
 }
 
-section {
+#page-content section {
     margin-bottom: 10em;
 }
 
 #page-content {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 10px;
 }
 
@@ -127,6 +128,43 @@ section {
 #ads-container {
     /* Area in body grid */
     grid-area: 2 / 4 / 3 / -1;
+
+    /* Lower container to desired height */
+    margin-top: 2em;
+    /* Create grid within container*/
+    display: grid;
+    /*Should cause a scrolling mechanism to be provided for overflowing boxes*/
+    overflow-y: auto;
+}
+
+#ads-container section {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#ads-container section:nth-child(odd) {
+    background-color: #7DB249;
+    height: 4em;
+    margin-bottom: 1em;
+}
+
+#ads-container section:nth-child(even) {
+    background-color: #FFC316;
+    height: 8em;
+    margin-bottom: 6em;
+}
+
+/* Make sections flex-containers to allow positioning properties */
+#ads-container section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ads-container a {
+    /* Change default display:inline to inline-block to expand clickable space */
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
 }
 
 /* === PAGE-NUMBER-NAV SETTINGS === */
