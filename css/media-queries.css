@@ -2,8 +2,69 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width: 375px) {
     body {
-        background-color: turquoise;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 375px;
+        grid-template-rows: 3em 4em 1fr 229px repeat(2, 1fr) 2em;
+    }
+    .alert-info {
+        grid-area: 1 / 1 / 2 / -1;
+
+        /* Make 'flex-container' to allow position properties */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 10px;
+        /* Create more area for expected clickable space at the top+bottom */
+        padding: 20px 0;
+        /*Alert width size Compensation for margin implementation */
+        width: calc(375px - 20px);
+        border: 1px solid #CCD0D0;
+        background-color: #CEFFFF;
+    }
+
+    .alert-info a {
+        /* Make inline-flex to expand clickable area + adjust text positioning */
+        display: inline-flex;
+        /* Utilize entire width of container */
+        width: 100%;
+        /* Utilize/make top+bottom space clickable */
+        padding: 10px;
+        justify-content: center;
+
+        text-decoration: none;
+        color: black;
+    }
+
+    h1 {
+        grid-area: 2 / 1 / 3 / -1;
+    }
+
+    nav {
+        grid-area: 3 / 1 / 4 / -1;
+    }
+
+    .header-img {
+        grid-area: 4 / 1 / 5 / -1;
+    }
+
+    .header-img > img {
+        width: 375px;
+        height: 229px;
+    }
+
+    #main {
+        grid-area: 5 / 1 / 6 / -1;
+    }
+
+    section .sub-section {
+        grid-area: 6 / 1 / 7 / -1;
+    }
+
+    footer {
+        grid-area: 7 / 1 / -1 / -1;
     }
 }
