@@ -171,11 +171,34 @@ body {
 #page-number-nav {
     /* Area in body grid */
     grid-area: 3 / 2 / 4 / -1;
+
+    /* Make list display:flex to enable positioning properties */
+    display: flex;
+    justify-self: center;
+    align-self: center;
 }
 
 #page-number-list {
+    /* Make list display:flex to enable flex-direction */
     display: flex;
+    /* Remove bullets from list */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+#page-number-list a{
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    padding: 10px 20px;
+}
+
+#page-number-list a:hover {
+    background-color: #000000;
+    color: white;
+}
+
 
 /* === FOOTER-CONTAINER SETTINGS === */
 
