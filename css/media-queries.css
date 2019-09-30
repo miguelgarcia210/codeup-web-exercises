@@ -1,3 +1,6 @@
+/* Created media query first then default */
+/* Project: Replicate site by creating mobile first as desktop then scale upwards */
+
 * {
     box-sizing: border-box;
 }
