@@ -94,7 +94,15 @@
     </script>
 
     <script>
+        // Write the JavaScript function that calculates the area of a circle when provided the diameter
+        function areaOfCircle(i) {
+            //FORMULA: (1/4)*PI*d^2
+            var diameterSquared = Math.pow(i,2)
+            var area = ((1/4) * (Math.PI * diameterSquared))
+            return area;
+        }
 
+        console.log(areaOfCircle(12))
     </script>
 </body>
 </html>
