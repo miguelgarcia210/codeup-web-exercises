@@ -76,7 +76,7 @@ function userNumber() {
     }
 }
 
-userNumber();
+// userNumber();
 
 /* ########################################################################## */
 
@@ -106,6 +106,9 @@ userNumber();
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+// === MY CODE ===
+
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -116,6 +119,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+function analyzeColorSwitch(x) {
+    switch (x) {
+        case "red":
+            return "Red cups are used to signal instructors for assistance.";
+        case "orange":
+            return "\"Orange\" you glad you came to work today?";
+        case "yellow":
+            return "\"Yellow\" anybody there?";
+        case "green":
+            return "Green is such a nice color. By the way EAT YOUR GREENS!";
+        case "blue":
+            return "What would a blue cup stand for on our desks?";
+        case "indigo":
+            return "The more you know presents:\nIndigo: the second to last color on a rainbow";
+        case "violet":
+            return "I wonder what the \"Juicing Room\" looks like. Probably should ask Violet.";
+        default:
+            return "My apologies. I only know about the 7 colors of the rainbow.";
+    }
+}
+
+alert(analyzeColorSwitch(randomColor));
+alert(analyzeColorSwitch("cyan"));
 
 /**
  * TODO:
