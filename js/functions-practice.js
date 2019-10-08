@@ -27,4 +27,21 @@
     };
 
     console.log(divideExp(10,5));
+
+//    === Self Understanding ===
+    function makeAdder(x) {
+        return function(y) {
+            return x + y;
+        };
+    }
+
+    // 'var add(#)' are closures that share the same body as makeAdder()
+    // lexical environment for each are set differently. Respectively: 5,10,50
+    var add5 = makeAdder(5);
+    var add10 = makeAdder(10);
+    var add50 = makeAdder(50);
+
+    console.log(add5(2));  // 7
+    console.log(add10(2)); // 12
+    console.log(add50(50)); // 100
 })();
