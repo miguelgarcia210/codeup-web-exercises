@@ -15,6 +15,68 @@
  *
  * Can you refactor your code to use functions?
  */
+function isOdd(x) {
+    return x % 2 !== 0;
+}
+
+function add100(x) {
+    return x + 100;
+}
+
+function isNegative(x) {
+    return x < 0;
+}
+
+
+function userNumber() {
+    var confirmed = confirm("Would you like to enter a number?");
+
+    if (confirmed) {
+        var enteredNumber = prompt("Please enter a number below.\nFormat: Integer/Decimal\ne.g. 2, 3.14 ...");
+
+        if (enteredNumber !== null) {
+            enteredNumber = parseFloat(enteredNumber);
+        } else {
+            alert("Sorry to see you go. Refresh the page to visit this prompt again.");
+            return 0;
+        }
+
+        if (isNaN(enteredNumber) === true) {
+            alert("The value you entered is not a number.\nRefresh the page to visit this prompt again.\nValid numbers: e.g. 2, 25, 100 ...");
+            return 0;
+        } else {
+            if (isOdd(enteredNumber) === true) {
+                alert("The number you entered is odd.");
+            } else {
+                alert("The number you entered is even.");
+            }
+
+            alert("The addition of 100 to your number is " + add100(enteredNumber));
+
+            if (isNegative(enteredNumber) === true) {
+                alert("The number you entered is also a negative number.");
+            } else {
+                alert("The number you entered is also a positive number.");
+            }
+
+            // BEFORE REFACTOR W/FUNCTIONS
+
+            // if (enteredNumber % 2 !== 0) {
+            //     alert("The number you entered is odd.");
+            // } else {
+            //     alert("The number you entered is even.");
+            // }
+            // alert("The addition of 100 to your number is " + (enteredNumber + 100));
+            // if (enteredNumber < 0) {
+            //     alert("The number you entered is also a negative number.");
+            // } else {
+            //     alert("The number you entered is also a positive number.");
+            // }
+        }
+    }
+}
+
+userNumber();
 
 /* ########################################################################## */
 
@@ -43,6 +105,7 @@
 //                  will contain a different color everytime the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
