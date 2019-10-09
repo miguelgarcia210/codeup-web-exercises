@@ -258,6 +258,24 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
 
+// var colors = ['red', 'yellow', 'green'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//
+// function trafficLightState(trafficLightColor) {
+//     if (trafficLightColor === "red") {
+//         return "STOP!";
+//     } else if (trafficLightColor === "yellow") {
+//         return "Prepare to stop. Decrease your vehicle speed.";
+//     } else if (trafficLightColor === "green") {
+//         return "Continue driving."
+//     } else {
+//         return "That color is not present on a traffic light.";
+//     }
+// }
+//
+// alert(trafficLightState(randomColor));
+// console.log(trafficLightState("blinking"));
+
 
 // ================ NESTED STATEMENTS ===============
 //Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligible for a license.
