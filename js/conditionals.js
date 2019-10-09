@@ -1,5 +1,6 @@
 "use strict";
 
+(function () {
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -59,7 +60,7 @@ function userNumber() {
                 alert("The number you entered is also a positive number.");
             }
 
-            // BEFORE REFACTOR W/FUNCTIONS
+            // BELOW IS THE CODE BEFORE REFACTORED W/FUNCTIONS
 
             // if (enteredNumber % 2 !== 0) {
             //     alert("The number you entered is odd.");
@@ -76,7 +77,7 @@ function userNumber() {
     }
 }
 
-// userNumber();
+userNumber();
 
 /* ########################################################################## */
 
@@ -102,26 +103,48 @@ function userNumber() {
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color everytime the page loads)
+//                  will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
 // === MY CODE ===
 
+function analyzeColor(color) {
+    if (color === "red") {
+        return "Red cups are used to signal instructors for assistance.";
+    } else if (color === "orange") {
+        return "\"Orange\" you glad you came to work today?";
+    } else if (color === "yellow") {
+        return "\"Yellow\" anybody there?";
+    } else if (color === "green") {
+        return "Green is such a nice color. By the way EAT YOUR GREENS!";
+    } else if (color === "blue") {
+        return "What would a blue cup stand for on our desks?";
+    } else if (color === "indigo") {
+        return "The more you know presents:\nIndigo: the second to last color on a rainbow";
+    } else if ("violet") {
+        return "I wonder what the \"Juicing Room\" looks like. Probably should ask Violet.";
+    } else {
+        return "My apologies. I only know about the 7 colors of the rainbow.";
+    }
+}
 
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
- * You should see a different message everytime you refresh the page
+ * You should see a different message every time you refresh the page
  */
+
+console.log(analyzeColor(randomColor));
+console.log(analyzeColor("cyan"));
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
 
-function analyzeColorSwitch(x) {
-    switch (x) {
+function analyzeColorSwitch(color) {
+    switch (color) {
         case "red":
             return "Red cups are used to signal instructors for assistance.";
         case "orange":
@@ -151,11 +174,15 @@ alert(analyzeColorSwitch("cyan"));
  * function to show it to the user.
  */
 
+var userColor = prompt("Choose a color:\nred, orange, yellow, green, blue, indigo, violet");
+
+alert(analyzeColorSwitch(userColor));
+
 /* ########################################################################## */
 
 /**
  * TODO:
- * Suppose there's a promotion in Walmart, each customer is given a randomly
+ * Suppose there's a promotion in Wal-mart, each customer is given a randomly
  * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
  * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
  * the discount is 25%, if it's 3, 35%, if it's 4, 50%, and if it's 5 you'll get
@@ -182,3 +209,5 @@ alert(analyzeColorSwitch("cyan"));
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
+}());
