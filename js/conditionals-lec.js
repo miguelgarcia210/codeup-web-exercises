@@ -11,29 +11,46 @@ console.log("hello from conditionals lec.js!");
 // ================ IF STATEMENT SYNTAX ================
 
 // if(condition){
-    // code here runs if condition evaluates to true
+// code here runs if condition evaluates to true
 // }
-    
+
 
 // ================ IF STATEMENT EXAMPLES ================
-//Together: Show a specific navbar if user is admin
+//Together: Show a specific nav-bar if user is admin
+
+// if(isAdmin) {
+//     // Show a specific nav-bar
+// }
+
 //Together: Send a 20% off coupon if its users birthday
+
+// if (isBirthday) {
+//     // Send 20% coupon! Happy Birthday!
+// }
+
 //Together: Write an if statement that alerts "It's raining" if isRainy is true
+
+// var isRainy = false;
+//
+// if(isRainy) {
+//     alert("It's raining!");
+// }
+
 //Together: Write an if statement that alerts the user whether or not they have enough money to buy a new item. Assume there are no hidden fees or taxes.
 
+var itemCost = 100;
+var currentBalance = 200;
 
+if (itemCost < currentBalance) {
+    alert("You have enough money! Yay!");
+}
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
 //TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
 
 
-
-
 //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
-
-
-
 
 
 // =============== IF / ELSE SYNTAX ================
@@ -43,14 +60,11 @@ console.log("hello from conditionals lec.js!");
 // } else {
 //     // code here runs if condition evaluates to false
 // }
-    
-    
+
 
 // =============== IF / ELSE STATEMENT EXAMPLES ================
 //Together: Show a specific navbar if user is admin, else show a different navbar
 //Together: Write an if statement that alerts "It's raining" if isRainy is true, else return "have a nice day!"
-
-
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
@@ -59,11 +73,9 @@ console.log("hello from conditionals lec.js!");
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
 
 
-
 //TODO: EXTRA BONUS - Refactor todo#2 from above as a function.
 
-    
-    
+
 // SHOULD WE DELETE STUFF EXAMPLE
 
 // var weShouldDeleteStuff = confirm('Are you sure you want to delete everything?');
@@ -89,7 +101,6 @@ console.log("hello from conditionals lec.js!");
 //     // code here gets executed if condition1 nor condition2 evaluate to true
 // }
 
-    
 
 // =============== IF / ELSE IF/ELSE STATEMENT EXAMPLES ================
 //Together: Write an if/else if/else statement that alerts "It's snowing!" if weather is equal to "snowing", alerts "It's raining" if weather is equal to "raining", alerts "have a nice day" for all other cases
@@ -112,22 +123,11 @@ console.log("hello from conditionals lec.js!");
 // }
 
 
-
-
 //TODO: Write a function that accepts a string that is a traffic light color as an input. When this function is called, it should return a message informing the user what to do when approaching that color light at an intersection.
-
-
-
-
 
 
 // ================ NESTED STATEMENTS ===============
 //Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license. 
-
-
-
-
-
 
 
 // ================ TERNARY STATEMENT ================
@@ -164,7 +164,6 @@ console.log("hello from conditionals lec.js!");
 //WRITE YOUR TERNARY STATEMENT HERE!
 
 
-
 // =============== SWITCH STATEMENT ================
 //Together:
 
@@ -187,7 +186,6 @@ console.log("hello from conditionals lec.js!");
 
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
-
 
 
 // ================ REVERSE ENGINEERING =================
