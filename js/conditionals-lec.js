@@ -46,38 +46,42 @@ console.log("hello from conditionals lec.js!");
 // }
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
-var numberOfLives = 0;
 
-if (numberOfLives === 0) {
-    alert("Sorry, game over");
-}
+// var numberOfLives = 0;
+//
+// if (numberOfLives === 0) {
+//     alert("Sorry, game over");
+// }
 
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
-var weather = "snowing";
 
-if (weather === "snowing") {
-    alert("It's snowing!");
-}
+// var weather = "snowing";
+//
+// if (weather === "snowing") {
+//     alert("It's snowing!");
+// }
 
 //TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
-var numberInput = 11;
 
-if (numberInput > 10) {
-    alert("true");
-}
+// var numberInput = 11;
+//
+// if (numberInput > 10) {
+//     alert("true");
+// }
 
 //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
-function checkNumberOfLives() {
 
-}
-
-function checkWeather() {
-
-}
-
-function checkNumber() {
-
-}
+// function checkNumberOfLives() {
+//
+// }
+//
+// function checkWeather() {
+//
+// }
+//
+// function checkNumber() {
+//
+// }
 
 // =============== IF / ELSE SYNTAX ================
 
@@ -112,10 +116,44 @@ function checkNumber() {
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
-//TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
-//TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
-//TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!. 
 
+var numberOfLives = 5;
+
+if (numberOfLives === 0) {
+    alert("Sorry, game over");
+} else {
+    alert("Next Level!");
+}
+
+//TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
+
+var weather = "snowing";
+
+if (weather === "snowing") {
+    alert("It's snowing!");
+} else {
+    alert("Check back later for more details!");
+}
+
+//TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
+
+var numberInput = 11;
+
+if (numberInput) {
+    alert("true");
+} else {
+    alert("The number is less than 10");
+}
+
+//TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!.
+
+function checkIfGameIsOver(numberOfLives) {
+    if (numberOfLives === 0) {
+        return "Sorry, game over"
+    } else {
+        return "Next Level!"
+    }
+}
 
 //TODO: EXTRA BONUS - Refactor todo#2 from above as a function.
 
