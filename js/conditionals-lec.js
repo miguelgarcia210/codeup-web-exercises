@@ -212,7 +212,33 @@ console.log("hello from conditionals lec.js!");
 // =============== IF / ELSE IF/ELSE STATEMENT EXAMPLES ================
 //Together: Write an if/else if/else statement that alerts "It's snowing!" if weather is equal to "snowing", alerts "It's raining" if weather is equal to "raining", alerts "have a nice day" for all other cases
 
+// var weather = "snowing";
+//
+// if (weather === "snowing") {
+//     alert("It's snowing!");
+// } else if (weather === "raining"){
+//     alert("It's raining!");
+// } else if (weather === "sunny") {
+//     alert("It's sunny!");
+// } else {
+//     alert("Have a nice day!");
+// }
+
 //Together: refactor the above statement as a function
+
+// function checkWeather(weatherCondition) {
+//     if (weatherCondition === "snowing") {
+//         alert("It's snowing!");
+//     } else if (weatherCondition === "raining"){
+//         alert("It's raining!");
+//     } else if (weatherCondition === "sunny") {
+//         alert("It's sunny!");
+//     } else {
+//         alert("Have a nice day!");
+//     }
+// }
+//
+// checkWeather("snowing");
 
 // Together: PIZZA PREFERENCE EXAMPLE 
 
