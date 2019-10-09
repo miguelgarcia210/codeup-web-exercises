@@ -328,6 +328,14 @@ console.log("hello from conditionals lec.js!");
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
+var weather = "sunny";
+
+function checkWeather(weatherCondition){
+    return (weatherCondition === "rainy") ? "It's raining" : "Have a nice day!";
+}
+
+console.log(checkWeather(weather));
+
 
 // =============== SWITCH STATEMENT ================
 //Together:
