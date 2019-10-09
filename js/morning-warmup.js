@@ -97,3 +97,19 @@ function greater5() {
 }
 
 console.log(greater5());
+
+/*
+
+Write a JavaScript function that returns the message, “Hello there, stranger.”
+Alert the return from this function. Refactor so that it returns “Hello there, “ concatenated to an argument.
+Prompt the user to input a string, call the function,
+and alert the return refactor so that the function has ‘stranger’ as a default value for the parameter
+
+ */
+function helloThere(string = "stranger") {
+    return "Hello there, " + string + ".";
+}
+
+var promptedResponse = prompt("Enter your name please.");
+
+alert(helloThere(promptedResponse));
