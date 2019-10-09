@@ -328,13 +328,13 @@ console.log("hello from conditionals lec.js!");
 
 //WRITE YOUR TERNARY STATEMENT HERE!
 
-var weather = "sunny";
-
-function checkWeather(weatherCondition){
-    return (weatherCondition === "rainy") ? "It's raining" : "Have a nice day!";
-}
-
-console.log(checkWeather(weather));
+// var weather = "sunny";
+//
+// function checkWeather(weatherCondition){
+//     return (weatherCondition === "rainy") ? "It's raining" : "Have a nice day!";
+// }
+//
+// console.log(checkWeather(weather));
 
 
 // =============== SWITCH STATEMENT ================
@@ -357,8 +357,44 @@ console.log(checkWeather(weather));
 
 //TODO: Write a switch statement that evaluates weather as the condition. Check for "rainy", "sunny", "snow", and a default case.
 
+// var weather = prompt("Whats the weather condition today?\nChoose from: rainy, sunny, snowy");
+//
+// switch (weather) {
+//     case "rainy":
+//         alert("It's raining!");
+//         break;
+//     case "snowy":
+//         alert("It's snowing");
+//         break;
+//     case "sunny":
+//         alert("Have a nice day out in the sun!");
+//         break;
+//     default:
+//         alert("Make the best of it!");
+//         break;
+// }
 
 //TODO: Rewrite the intersection function from earlier as a switch statement.
+
+// var colors = ['red', 'yellow', 'green'];
+// var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//
+// function trafficLightState(trafficLightColor) {
+//     switch (trafficLightColor) {
+//         case "red":
+//             return "STOP!";
+//         case "yellow":
+//             return "Prepare to stop. Decrease your vehicle speed.";
+//         case "green":
+//             return "Continue driving.";
+//         default:
+//             return "That color is not present on a traffic light.";
+//     }
+// }
+//
+// console.log("The selected color was " + randomColor);
+// alert(trafficLightState(randomColor));
+// console.log(trafficLightState("blinking"));
 
 
 // ================ REVERSE ENGINEERING =================
