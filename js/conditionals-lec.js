@@ -93,7 +93,7 @@ console.log("hello from conditionals lec.js!");
 
 
 // =============== IF / ELSE STATEMENT EXAMPLES ================
-//Together: Show a specific navbar if user is admin, else show a different navbar
+//Together: Show a specific nav-bar if user is admin, else show a different navbar
 // var isAdmin = false;
 //
 // if (isAdmin) {
@@ -117,45 +117,58 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
 
-var numberOfLives = 5;
-
-if (numberOfLives === 0) {
-    alert("Sorry, game over");
-} else {
-    alert("Next Level!");
-}
+// var numberOfLives = 5;
+//
+// if (numberOfLives === 0) {
+//     alert("Sorry, game over");
+// } else {
+//     alert("Next Level!");
+// }
 
 //TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing", else alert "Check back later for more details!"
 
-var weather = "snowing";
-
-if (weather === "snowing") {
-    alert("It's snowing!");
-} else {
-    alert("Check back later for more details!");
-}
+// var weather = "snowing";
+//
+// if (weather === "snowing") {
+//     alert("It's snowing!");
+// } else {
+//     alert("Check back later for more details!");
+// }
 
 //TODO: Write an if statement that alerts true if numberInput is greater than 10, else alert "the number is less than 10"
 
-var numberInput = 11;
-
-if (numberInput) {
-    alert("true");
-} else {
-    alert("The number is less than 10");
-}
+// var numberInput = 11;
+//
+// if (numberInput) {
+//     alert("true");
+// } else {
+//     alert("The number is less than 10");
+// }
 
 //TODO: Refactor todo#1 as a function named checkIfGameIsOver, that accepts numberOfLives and returns "Sorry, game over" if numberOfLives is 0, else return "Next Level!.
 
-function checkIfGameIsOver(numberOfLives) {
-    if (numberOfLives === 0) {
-        return "Sorry, game over"
-    } else {
-        return "Next Level!"
-    }
-}
+// function checkIfGameIsOver(numberOfLives) {
+//     if (numberOfLives === 0) {
+//         return "Sorry, game over"
+//     } else {
+//         return "Next Level!"
+//     }
+// }
+
+// alert(checkIfGameIsOver(numberOfLives));
 
 //TODO: EXTRA BONUS - Refactor todo#2 from above as a function.
+
+// function checkWeather(weatherCondition) {
+//     if (weatherCondition === "snowing") {
+//         alert("It's snowing!");
+//     } else {
+//         alert("Check back later for more details!");
+//     }
+// }
+
+// Uncomment code for 'IF / ELSE EXAMPLES' Sections to work
+// checkWeather(weather);
 
 
 // SHOULD WE DELETE STUFF EXAMPLE
@@ -209,7 +222,7 @@ function checkIfGameIsOver(numberOfLives) {
 
 
 // ================ NESTED STATEMENTS ===============
-//Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligble for a license. 
+//Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligible for a license.
 
 
 // ================ TERNARY STATEMENT ================
