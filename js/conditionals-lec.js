@@ -90,7 +90,25 @@ function checkNumber() {
 
 // =============== IF / ELSE STATEMENT EXAMPLES ================
 //Together: Show a specific navbar if user is admin, else show a different navbar
+// var isAdmin = false;
+//
+// if (isAdmin) {
+//     // Show a specific nav-bar
+// } else {
+//     // Show regular nav-bar
+//     alert("User is a regular user.");
+// }
+
 //Together: Write an if statement that alerts "It's raining" if isRainy is true, else return "have a nice day!"
+// var isRainy = true;
+//
+// if (isRainy) {
+//     // Show a raining icon or a dark blue background
+//     alert("It's raining!");
+// } else {
+//     // Show a regular weather icon or a nice yellow background
+//     alert("Have a nice day!");
+// }
 
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0, else alert "Next Level!"
