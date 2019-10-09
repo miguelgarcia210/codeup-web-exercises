@@ -403,9 +403,67 @@ console.log("hello from conditionals lec.js!");
 
 // 1) https://mdn.github.io/learning-area/javascript/building-blocks/allowance-updater.html
 
+// === IMPLEMENTED IF / ELSE ===
+
+// function allowanceEarned() {
+//     var didChores = confirm("Has the shopping been done?");
+//     var allowanceRate = 5;
+//
+//     if (didChores) {
+//         allowanceRate += 5;
+//         alert("Child has earned $" + allowanceRate + " this week.");
+//     } else {
+//         alert("Child has earned $" + allowanceRate + " this week.");
+//     }
+// }
+//
+// allowanceEarned();
 
 // 2) https://mdn.github.io/learning-area/javascript/building-blocks/simple-else-if.html
 
+// === IMPLEMENTED SWITCH ===
+
+// function checkWeather() {
+//     var weather = prompt("Select the weather type today.\nChoose from: Sunny, Rainy, Snowing, Overcast");
+//
+//     if (weather !== null) {
+//         switch (weather) {
+//             case "Rainy":
+//                 alert("Rain is falling outside; take a rain coat and a brolly, and don't stay out for too long.");
+//                 break;
+//             case "Snowing":
+//                 alert("The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.");
+//                 break;
+//             case "Sunny":
+//                 alert("It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.");
+//                 break;
+//             case "Overcast":
+//                 alert("It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.");
+//                 break;
+//             default:
+//                 alert("Make the best of it!");
+//                 break;
+//         }
+//     }
+// }
+//
+// checkWeather();
 
 // 3) https://mdn.github.io/learning-area/javascript/building-blocks/simple-ternary.html
+
+// === IMPLEMENTED IF / ELSE / IF / ELSE ===
+
+// function changeTheme(){
+//     var themeColor = prompt("Choose a theme color:\nBlack\nWhite");
+//
+//     if (themeColor === "Black") {
+//         return "The background color has been changed to black!";
+//     } else if (themeColor === "White") {
+//         return "The background color has been changed to white!";
+//     } else {
+//         return "Chosen color was not 'Black' or 'White'.";
+//     }
+// }
+//
+// alert(changeTheme());
 
