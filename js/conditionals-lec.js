@@ -38,20 +38,46 @@ console.log("hello from conditionals lec.js!");
 
 //Together: Write an if statement that alerts the user whether or not they have enough money to buy a new item. Assume there are no hidden fees or taxes.
 
-var itemCost = 100;
-var currentBalance = 200;
-
-if (itemCost < currentBalance) {
-    alert("You have enough money! Yay!");
-}
+// var itemCost = 100;
+// var currentBalance = 200;
+//
+// if (itemCost < currentBalance) {
+//     alert("You have enough money! Yay!");
+// }
 
 //TODO: Write an if statement that alerts "Sorry, game over" if numberOfLives is 0
-//TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
-//TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
+var numberOfLives = 0;
 
+if (numberOfLives === 0) {
+    alert("Sorry, game over");
+}
+
+//TODO: Write an if statement that alerts "It's snowing!" if weather is equal to "snowing"
+var weather = "snowing";
+
+if (weather === "snowing") {
+    alert("It's snowing!");
+}
+
+//TODO: Write an if statement that alerts true if numberInput is greater than but not equal to 10
+var numberInput = 11;
+
+if (numberInput > 10) {
+    alert("true");
+}
 
 //TODO: EXTRA BONUS - Refactor each of the previous statements as functions.
+function checkNumberOfLives() {
 
+}
+
+function checkWeather() {
+
+}
+
+function checkNumber() {
+
+}
 
 // =============== IF / ELSE SYNTAX ================
 
