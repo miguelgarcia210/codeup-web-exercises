@@ -187,6 +187,18 @@ console.log("hello from conditionals lec.js!");
 
 //TODO: Write a confirm asking the user if they are 13 years of age or older. If they are, alert "You may proceed", if they are not, alert "Sorry, you are not able to proceed"
 
+// function checkAge() {
+//     var ageRequirement = confirm("You must be 13 years or older to proceed. Are you 13 years or older?");
+//
+//     if (ageRequirement) {
+//         alert("You may proceed.");
+//     } else {
+//         alert("Sorry, you are not able to proceed.");
+//     }
+// }
+//
+// checkAge();
+
 // ================ IF / ELSE IF / ELSE STATEMENT SYNTAX ===============
 // if(condition1){
 //     // code here runs if condition evaluates to true
