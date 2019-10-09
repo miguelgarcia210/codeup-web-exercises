@@ -280,6 +280,20 @@ console.log("hello from conditionals lec.js!");
 // ================ NESTED STATEMENTS ===============
 //Together: If user is under 15, they are not eligible for a learners permit, else they are. If they are eligible, check age. If they are 15 they are eligible for a learners permit, if they are 16 or older and have a permit, they are eligible for license, if they are 16 or older and do not have a permit, they are not eligible for a license.
 
+// var userAge = 16;
+// var hasPermit = true;
+//
+// if (userAge < 15) {
+//     alert("Sorry you're not eligible for a permit!");
+// } else {
+//     if (userAge === 15) {
+//         alert("You can have a permit! Yay!");
+//     } else if (userAge >= 16 && hasPermit) {
+//         alert("You can have a license")
+//     } else if (userAge >= 16 && !hasPermit) {
+//         alert("Sorry you need a permit first.");
+//     }
+// }
 
 // ================ TERNARY STATEMENT ================
 
