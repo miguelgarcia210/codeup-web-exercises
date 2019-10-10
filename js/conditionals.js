@@ -77,7 +77,7 @@ function userNumber() {
     }
 }
 
-userNumber();
+// userNumber();
 
 /* ########################################################################## */
 
@@ -135,8 +135,8 @@ function analyzeColor(color) {
  * You should see a different message every time you refresh the page
  */
 
-console.log(analyzeColor(randomColor));
-console.log(analyzeColor("cyan"));
+// console.log(analyzeColor(randomColor));
+// console.log(analyzeColor("cyan"));
 
 /**
  * TODO:
@@ -164,8 +164,8 @@ function analyzeColorSwitch(color) {
     }
 }
 
-alert(analyzeColorSwitch(randomColor));
-alert(analyzeColorSwitch("cyan"));
+// alert(analyzeColorSwitch(randomColor));
+// alert(analyzeColorSwitch("cyan"));
 
 /**
  * TODO:
@@ -174,9 +174,9 @@ alert(analyzeColorSwitch("cyan"));
  * function to show it to the user.
  */
 
-var userColor = prompt("Choose a color:\nred, orange, yellow, green, blue, indigo, violet");
+// var userColor = prompt("Choose a color:\nred, orange, yellow, green, blue, indigo, violet");
 
-alert(analyzeColorSwitch(userColor));
+// alert(analyzeColorSwitch(userColor));
 
 /* ########################################################################## */
 
@@ -201,33 +201,39 @@ alert(analyzeColorSwitch(userColor));
  */
 
 function calculateTotal(luckyNumber, total) {
-    function displayTotal(finalTotal){
-        return "Your total is $" + finalTotal;
-    }
+    var percentDiscount;
 
     function discountedTotal(percentDiscount) {
-        return "You got a " + (percentDiscount * 100) + "% discount! " + displayTotal(total -= total * percentDiscount);
+        return (total -= total * percentDiscount).toFixed(2);
     }
 
     switch (luckyNumber) {
         case 0:
-            return "No discount applied. " + displayTotal(total);
+            percentDiscount = 0;
+            break;
         case 1:
-            return discountedTotal(.1);
+             percentDiscount = .1;
+             break;
         case 2:
-            return discountedTotal(.25);
+             percentDiscount = .25;
+             break;
         case 3:
-            return discountedTotal(.35);
+             percentDiscount = .35;
+             break;
         case 4:
-            return discountedTotal(.50);
+             percentDiscount = .50;
+             break;
         case 5:
-            return discountedTotal(1);
+             percentDiscount = 1;
+             break;
         default:
-            return "Sorry that number is not applicable. " + displayTotal(total);
+            percentDiscount = 0;
     }
+
+    return discountedTotal(percentDiscount);
 }
 
-alert(calculateTotal(5, 100));
+alert(calculateTotal(4, 100));
 
 /**
  * TODO:
@@ -237,6 +243,26 @@ alert(calculateTotal(5, 100));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+function displayFinalSale(){
+    var billDue = prompt("Enter your amount due.");
+
+    if (billDue !== null) {
+        billDue = parseFloat(billDue);
+    } else {
+        alert("Sorry to see you go. Refresh the page to visit this prompt again.");
+        return 0;
+    }
+
+    if (isNaN(billDue) === true) {
+        alert("The value you entered is not a number.\nRefresh the page to visit this prompt again.\nValid numbers: e.g. 2, 25.50, 100 ...");
+        return 0;
+    } else {
+        alert("Your lucky number was " + luckyNumber + "!\n" + "Previous balance due: $" + billDue + "\n" + "Final balance due: $" + calculateTotal(luckyNumber, billDue));
+    }
+}
+
+displayFinalSale();
 
 }());
