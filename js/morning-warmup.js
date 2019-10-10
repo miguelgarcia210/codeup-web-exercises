@@ -122,3 +122,5 @@ function arrayLength(x) {
 var myArray = [0,1,2,3,4];
 
 console.log("The length of the array is " + arrayLength(myArray));
+
+//Next warmup
