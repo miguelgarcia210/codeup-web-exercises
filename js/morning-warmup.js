@@ -113,3 +113,12 @@ function helloThere(string = "stranger") {
 var promptedResponse = prompt("Enter your name please.");
 
 alert(helloThere(promptedResponse));
+
+//Write a JavaScript function that accepts an array and returns the length of that array
+
+function arrayLength(x) {
+    return x.length
+}
+var myArray = [0,1,2,3,4];
+
+console.log("The length of the array is " + arrayLength(myArray));
