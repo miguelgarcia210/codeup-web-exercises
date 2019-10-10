@@ -200,6 +200,15 @@ alert(analyzeColorSwitch(userColor));
  * return value.
  */
 
+function calculateTotal(luckyNumber, total) {
+    switch (luckyNumber) {
+        case 0:
+            return "No discount applied. Your total is " + total;
+        case 1:
+            return ""
+    }
+}
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
