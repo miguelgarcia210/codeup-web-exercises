@@ -201,13 +201,17 @@ alert(analyzeColorSwitch(userColor));
  */
 
 function calculateTotal(luckyNumber, total) {
-    function discountedTotal(x) {
-        return "You got a " + (x * 100) + "% discount! Your total is " + (total -= total * x);
+    function displayTotal(finalTotal){
+        return "Your total is $" + finalTotal;
+    }
+
+    function discountedTotal(percentDiscount) {
+        return "You got a " + (percentDiscount * 100) + "% discount! " + displayTotal(total -= total * percentDiscount);
     }
 
     switch (luckyNumber) {
         case 0:
-            return "No discount applied. Your total is " + total;
+            return "No discount applied. " + displayTotal(total);
         case 1:
             return discountedTotal(.1);
         case 2:
@@ -219,11 +223,11 @@ function calculateTotal(luckyNumber, total) {
         case 5:
             return discountedTotal(1);
         default:
-            return "Sorry that number is not applicable.";
+            return "Sorry that number is not applicable. " + displayTotal(total);
     }
 }
 
-alert(calculateTotal(3, 100));
+alert(calculateTotal(5, 100));
 
 /**
  * TODO:
