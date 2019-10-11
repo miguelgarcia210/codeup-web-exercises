@@ -126,7 +126,13 @@ console.log("The length of the array is " + arrayLength(myArray));
 //TODO: Write a JavaScript function that returns the quotient of two numbers, but only when passed two numbers. It should return false in all other cases
 
 function quotient(a, b) {
-    return Math.floor(a / b);
+   if (typeof parseFloat(a) === "number" && typeof parseFloat(b) === "number") {
+       return Math.floor(parseFloat(a) / parseFloat(b));
+   } else {
+       return false;
+   }
 }
 
+console.log(quotient("5", "2"));
 console.log(quotient(5, 2));
+console.log(quotient(5, "hello"));
