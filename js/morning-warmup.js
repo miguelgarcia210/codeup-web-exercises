@@ -123,4 +123,10 @@ var myArray = [0,1,2,3,4];
 
 console.log("The length of the array is " + arrayLength(myArray));
 
-//Next warmup
+//TODO: Write a JavaScript function that returns the quotient of two numbers, but only when passed two numbers. It should return false in all other cases
+
+function quotient(a, b) {
+    return Math.floor(a / b);
+}
+
+console.log(quotient(5, 2));
