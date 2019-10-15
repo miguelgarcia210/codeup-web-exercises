@@ -9,14 +9,14 @@
 var i = 0;
 while (i < 100) {
     i = i + 10;
-    // console.log(i)
+    console.log(i)
 }
 
 // TODO: 2. Create a while loop that counts backwards from 50 - 1
 
 var i = 50;
 while (i !== 0) {
-    console.log(i);
+    // console.log(i);
     i -= 1;
 }
 
@@ -25,7 +25,9 @@ var myQuestion;
 // TODO: 3. Create a while loop that asks the user for a confirmation when asked: "Would you like to exit?"
 // Store the confirm in the myQuestion variable.
 // Try running this. What happens?
-
+// while(!myQuestion) {
+//     myQuestion = confirm("Would you like to exit");
+// }
 
 /*
 * DO-WHILE LOOPS
@@ -35,8 +37,17 @@ var myQuestion;
 // TODO: 4. Refactor question 3 using a do-while loop.
 // What is the behavior this time?
 
+// do{
+//     myQuestion = confirm("Would you like to exit");
+// }while(!myQuestion);
+
+
 // TODO: 5. Create a do-while loop that prompts the user for a color and continues
 // to prompt until the string passed is "blue"
+var color;
+do {
+    color = prompt("Enter a color.");
+}while(color !== "blue");
 
 // TODO: 6. Refactor question 1 using a do-while loop.
 
