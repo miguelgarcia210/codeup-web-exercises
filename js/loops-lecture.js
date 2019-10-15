@@ -9,11 +9,16 @@
 var i = 0;
 while (i < 100) {
     i = i + 10;
-    console.log(i)
+    // console.log(i)
 }
 
 // TODO: 2. Create a while loop that counts backwards from 50 - 1
 
+var i = 50;
+while (i !== 0) {
+    console.log(i);
+    i -= 1;
+}
 
 var myQuestion;
 
