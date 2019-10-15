@@ -122,15 +122,3 @@ function arrayLength(x) {
 var myArray = [0,1,2,3,4];
 
 console.log("The length of the array is " + arrayLength(myArray));
-
-// Write a JavaScript function that takes in an array that has a length of 5. Console log each element of the array.
-function showItems(x) {
-    var i = 0;
-    while (i < x.length) {
-        console.log(x[i]);
-        i++;
-    }
-    return i;
-}
-
-console.log(showItems([1, 2, 3, 4, 5]));
