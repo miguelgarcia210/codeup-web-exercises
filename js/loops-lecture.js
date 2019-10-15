@@ -6,6 +6,12 @@
 // TODO: 1. Create a while loop that counts to 100 in increments of ten:
 // (10...20...30...)
 
+var i = 0;
+while (i < 100) {
+    i = i + 10;
+    console.log(i)
+}
+
 // TODO: 2. Create a while loop that counts backwards from 50 - 1
 
 
