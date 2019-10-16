@@ -18,19 +18,19 @@ var allCones = Math.floor(Math.random() * 50) + 50;
 // This expression will generate a random number between 1 and 5
 // Math.floor(Math.random() * 5) + 1;
 
-do {
-    console.log(allCones + " cones available.");
-    var number = Math.floor(Math.random() * 5) + 1;
-
-    if (number > allCones){
-        console.log("Cannot sell you " + number + " cone(s). I only have " + allCones + ".");
-        continue;
-    }
-
-    console.log(number + " cone(s) sold");
-    allCones -= number;
-
-    if (allCones === 0) {
-        console.log("Yay! I sold them all!")
-    }
-} while(allCones !== 0);
+// do {
+//     console.log(allCones + " cones available.");
+//     var number = Math.floor(Math.random() * 5) + 1;
+//
+//     if (number > allCones){
+//         console.log("Cannot sell you " + number + " cone(s). I only have " + allCones + ".");
+//         continue;
+//     }
+//
+//     console.log(number + " cone(s) sold");
+//     allCones -= number;
+//
+//     if (allCones === 0) {
+//         console.log("Yay! I sold them all!")
+//     }
+// } while(allCones !== 0);
