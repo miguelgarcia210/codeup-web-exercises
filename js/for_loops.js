@@ -22,6 +22,6 @@
 //     console.log(string.repeat(i));
 // }
 
-for (var i = 100; i !== 0; i -= 5) {
-    console.log(i);
-}
+// for (var i = 100; i !== 0; i -= 5) {
+//     console.log(i);
+// }
