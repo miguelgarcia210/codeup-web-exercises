@@ -17,7 +17,11 @@
 //     }
 // }
 
-for (var i = 1; i <= 9; i++) {
-    var string = i.toString();
-    console.log(string.repeat(i));
-}
+// for (var i = 1; i <= 9; i++) {
+//     var string = i.toString();
+//     console.log(string.repeat(i));
+// }
+
+// for (var i = 100; i !== 0; i -= 5) {
+//     console.log(i);
+// }
