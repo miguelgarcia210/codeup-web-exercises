@@ -17,10 +17,7 @@
 //     }
 // }
 
-for (var i = 1; i <= 10; i++) {
-    var counter = 0;
-    while (counter !== i) {
-        console.log(i);
-        counter += 1;
-    }
+for (var i = 1; i <= 9; i++) {
+    var string = i.toString();
+    console.log(string.repeat(i));
 }
