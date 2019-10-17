@@ -149,3 +149,15 @@ function showItems(x) {
 }
 
 console.log(showItems([1, 2, 3, 4, 5]));
+
+// Write a JavaScript function that takes in an input and returns true if the input is a string, at least 8 characters in length. It should return false for all other input.
+
+function desiredString(x) {
+    if (typeof x === "string") {
+        return x.length >= 8;
+    }
+    return false;
+}
+
+console.log(desiredString("yourself"));
+console.log(desiredString("hello"));
