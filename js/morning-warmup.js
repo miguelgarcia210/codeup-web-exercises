@@ -161,3 +161,20 @@ function desiredString(x) {
 
 console.log(desiredString("yourself"));
 console.log(desiredString("hello"));
+
+// Write a JavaScript function that takes in a floating point number, and returns a number rounded down. It should return false for all inputs that aren't numbers.
+
+function roundDecimal(x) {
+    if (typeof x === "number" && !isNaN(x)) {
+        return Math.floor(x);
+    } else {
+        return false;
+    }
+}
+
+console.log(roundDecimal(3.14));
+console.log(roundDecimal(99.99));
+console.log(roundDecimal("hello"));
+console.log(roundDecimal([1,2,3,4,5]));
+console.log(roundDecimal(["1","2","3","4","5"]));
+console.log(roundDecimal(["hola","bonjour","hi","hello"]));
