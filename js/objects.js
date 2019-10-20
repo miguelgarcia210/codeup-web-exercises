@@ -61,24 +61,23 @@
         // log the discount if any is applied
         // log the amount after the discount
 
-        === UNCOMMENTED CODE ===
+        // === UNCOMMENTED CODE ===
     var shoppers = [
             {name: 'Cameron', amount: 180},
             {name: 'Ryan', amount: 250},
             {name: 'George', amount: 320}
         ];
-    //
+    // === UNCOMMENTED CODE ===
 
     shoppers.forEach(function (shopper) {
+        var discount = .12;
         var total = shopper.amount;
-        var discountTotal = shopper.amount - discount;
-        var discount = shopper.amount * .12;
+        var discountTotal = (shopper.amount - (shopper.amount * discount)).toFixed(2);
 
         if (shopper.amount > 200) {
-            // console.log(shopper.name + )
-
+            console.log("Name: " + shopper.name + " " + "Sub-total: $" + total + " " + "Discount: " + (discount * 100) + "%" + " " + "$" + discountTotal);
         } else {
-
+            console.log("Name: " + shopper.name + " " + "Total: $" + total);
         }
     });
 
@@ -126,7 +125,7 @@
             }
         },
         {
-            title: "Frankestein",
+            title: "Frankenstein",
             author: {
                 firstName: "Douglas",
                 lastName: "Adams"
