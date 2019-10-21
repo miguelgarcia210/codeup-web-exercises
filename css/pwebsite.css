@@ -3,17 +3,21 @@
 }
 
 body {
-    /*background-color: #FFFFFF;*/
-    background-color: lightblue;
+    background-color: #FFFFFF;
+    /*background-color: lightblue;*/
     padding: 0;
     margin: 0;
 }
 
 .header-style {
-    height: 40px;
-    background-color: #323232;
+    height: 48px;
+    /*background-color: #323232;*/
+    background-color: rgba(45, 45, 45, 0.98);
     display: flex;
     align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .nav-icon {
@@ -30,5 +34,10 @@ body {
     height: 1px;
     margin: 7px 0;
     transition: all .2s ease-in-out;
+}
+
+#main-logo {
+    height: 48px;
+    width: 18px;
 }
 
