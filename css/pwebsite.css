@@ -11,9 +11,13 @@ body {
 
 .header-style {
     height: 40px;
-    background-color: #323232;
+    /*background-color: #323232;*/
+    background-color: rgba(51, 51, 51, 0.5);
     display: flex;
     align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .nav-icon {
