@@ -195,7 +195,7 @@
     }
 
     // Testing the above function
-    var myBook = createBook("Life's many steps. Autobiography." , "Miguel", "Garcia");
+    var myBook = createBook("Life's many steps. Autobiography.", "Miguel", "Garcia");
     console.log(myBook);
     // Add this book to the end of books array
     books.push(myBook);
