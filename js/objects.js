@@ -97,51 +97,45 @@
 
     var books = [
         {
-            title: "Harry Potter and The Sorcerer's Stone",
+            title: "Orbiting Jupiter",
             author: {
-                firstName: "Douglas",
-                lastName: "Adams"
+                firstName: "Gary D.",
+                lastName: "Schmidt"
             }
         },
         {
-            title: "Garfield Loses His Feet",
+            title: "The Great Gatsby",
             author: {
-                firstName: "Douglas",
-                lastName: "Adams"
+                firstName: "F. Scott",
+                lastName: "Fitzgerald"
             }
         },
         {
-            title: "Traction",
+            title: "The Adventures of Tom Sawyer",
             author: {
-                firstName: "Douglas",
-                lastName: "Adams"
+                firstName: "Mark",
+                lastName: "Twain"
             }
         },
         {
-            title: "Hitchhikers's Guide to the Galaxy",
+            title: "The Giver",
             author: {
-                firstName: "Douglas",
-                lastName: "Adams"
+                firstName: "Lois",
+                lastName: "Lowry"
             }
         },
         {
-            title: "Frankenstein",
+            title: "The Outsider",
             author: {
-                firstName: "Douglas",
-                lastName: "Adams"
+                firstName: "S. E.",
+                lastName: "Hinton"
             }
         }
     ];
 
-    books.forEach(function (book, i) {
-        var output = "";
-        output += "Book # " + (i + 1) + "\n";
-        output += "Title: " + book.title + "\n";
-        output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
-        output += "---";
-        console.log(output);
-    })
-
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -168,6 +162,17 @@
      *      ...
      */
 
+    // books.forEach(function (book,index) {
+    //    var output = "";
+    //    output += "Book # " + (index + 1) + "\n";
+    //    output += "Title: " + book.title + "\n";
+    //    output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+    //    output += "---";
+    //    console.log(output);
+    // });
+    // UNCOMMENT CODE BELOW AND COMMENT .forEach ABOVE VISA VERSA
+    books.forEach(showBookInfo);
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -178,17 +183,32 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
     function createBook(title, first, last) {
-        var book = {};
-        book.title = title;
-        book.author = {
+        var books = {};
+        books.title = title;
+        books.author = {
             firstName: first,
             lastName: last
         };
-        return book;
+        return books;
     }
 
-    books.push(createBook("Cat's Cradle", "Kurt", "V"));
+    // Testing the above function
+    var myBook = createBook("Life's many steps. Autobiography." , "Miguel", "Garcia");
+    console.log(myBook);
+    // Add this book to the end of books array
+    books.push(myBook);
     console.log(books);
+
+
+    function showBookInfo(book, index) {
+        var output = "";
+        output += "Book # " + (index + 1) + "\n";
+        output += "Title: " + book.title + "\n";
+        output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+        output += "---";
+        console.log(output);
+    }
 
 })();
