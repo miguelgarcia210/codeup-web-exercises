@@ -178,3 +178,12 @@ console.log(roundDecimal("hello"));
 console.log(roundDecimal([1,2,3,4,5]));
 console.log(roundDecimal(["1","2","3","4","5"]));
 console.log(roundDecimal(["hola","bonjour","hi","hello"]));
+
+// Write a JavaScript function that counts from 1 up to the number that the user passes in. For example, if the argument passed in is 10, the function should log numbers 1 through 10.
+
+function counting(x) {
+    for (var i = 1; i <= x; i++) {
+        console.log(i);
+    }
+}
+counting(15);
