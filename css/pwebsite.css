@@ -9,6 +9,7 @@ body {
     margin: 0;
 }
 
+/* === HEADER CONTAINER === */
 .header-style {
     height: 48px;
     /*background-color: #323232;*/
@@ -20,24 +21,53 @@ body {
     width: 100%;
 }
 
+/* === NAV MENU ICON === */
+.nav-list {
+    list-style: none;
+    height: 48px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#nav-icon-list-item {
+    margin-right: auto;
+}
+
 .nav-icon {
-    margin-left: 9px;
+    margin-left: 1em;
     width: 17px;
 }
 
 .nav-icon:before,
 .nav-icon div {
     background-color: #FFFFFF;
-    border-radius: .5px;
+    border-radius: 0.5px;
     content: '';
     display: block;
     height: 1px;
     margin: 7px 0;
     transition: all .2s ease-in-out;
 }
-
-#main-logo {
-    height: 48px;
-    width: 18px;
+/* TODO: update transition */
+.nav-icon:hover:before {
+    transform: translateY(7px) rotate(45deg);
 }
 
+.nav-icon:hover div {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- NAV LOGO --- */
+#nav-logo-list-item {
+    position: absolute;
+}
+
+#nav-logo {
+    height: 40px;
+    width: 18px;
+}
