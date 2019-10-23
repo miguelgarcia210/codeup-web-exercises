@@ -187,3 +187,18 @@ function counting(x) {
     }
 }
 counting(15);
+
+// Write a JavaScript function that createPersonObject that takes in a name (that is a string) and an age (that is a number) and returns a person object containing the name and age.
+// e.g. createPersonObject ("Hannah", 47)
+// {
+//     name: "Hannah",
+//     age: 47
+// }
+
+function createPersonObject(name, age) {
+    var person = {
+        name: name,
+        age
+    }
+    return person;
+}
