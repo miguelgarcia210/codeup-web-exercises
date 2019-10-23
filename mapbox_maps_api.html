@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- === MAPBOX CSS === -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
+
+    <!-- === Custom CSS === -->
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #map {
+            margin: 0 auto;
+            width: 80vw;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Match Box API Exercise</h1>
+
+<div id="map"></div>
+
+
+<!-- === MAPBOX JS === -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+
+<!-- === CUSTOM JS === -->
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: "map",
+        style: 'mapbox://styles/mapbox/streets-v9'
+    });
+</script>
+
+</body>
+</html>
