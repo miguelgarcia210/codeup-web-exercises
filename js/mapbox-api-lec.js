@@ -70,21 +70,21 @@ var popup = new mapboxgl.Popup()
 
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the alamo marker.
 
-// var alamoPopup = new mapboxgl.Popup()
-//     .setHTML("<p>Remember The Alamo!</p>")
-//     .addTo(map);
-//
-// marker.setPopup(alamoPopup);
+var alamoPopup = new mapboxgl.Popup()
+    .setHTML("<p>Remember The Alamo!</p>")
+    .addTo(map);
+
+marker.setPopup(alamoPopup);
 
 
 // TODO: Review the popup docs. What are some additional options we can pass to the popup?
 // TODO: Try setting the text by using ".setText()" instead of ".setHTML()"
 
-var alamoPopup = new mapboxgl.Popup()
-    .setText("<p>Remember The Alamo!</p>" + marker.getLngLat())
-    .addTo(map);
-
-marker.setPopup(alamoPopup);
+// var alamoPopup = new mapboxgl.Popup()
+//     .setText("<p>Remember The Alamo!</p>" + marker.getLngLat())
+//     .addTo(map);
+//
+// marker.setPopup(alamoPopup);
 
 
     /**********************************************
@@ -95,6 +95,19 @@ marker.setPopup(alamoPopup);
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
 
+geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxToken).then(function(results) {
+    // logs the address for The Alamo
+    console.log(results);
+    map.setCenter(results);
+    map.setZoom(3);
+});
+geocode("98 Washington St, Norwalk, CT", mapboxToken).then(function(results) {
+    // logs the address for The Alamo
+    console.log(results);
+    var newmarker = new mapboxgl.Marker(markerOptions)
+        .setLngLat(results)
+        .addTo(map);
+});
 
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
@@ -102,7 +115,18 @@ marker.setPopup(alamoPopup);
 
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -98.4861, lat: 29.4260} to get a physical address for the alamo
+
+reverseGeocode({lng: -98.4861, lat: 29.4260}, mapboxToken).then(function(results) {
+    // logs the address for The Alamo
+    console.log(results);
+});
+
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
+
+reverseGeocode({lng: -73.418141, lat: 41.098859}, mapboxToken).then(function(results) {
+    // logs the address for 98 Washington St
+    console.log(results);
+});
 // });
 
 
