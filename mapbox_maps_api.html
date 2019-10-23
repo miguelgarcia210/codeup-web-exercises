@@ -14,18 +14,49 @@
             text-align: center;
         }
 
+        #map-container {
+            display: flex;
+            justify-content: center;
+        }
+
         #map {
-            margin: 0 auto;
             width: 80vw;
             height: 40em;
+            border-radius: 1em;
+            border: 5px outset lightblue;
+
+        }
+
+        #menu {
+            position: absolute;
+            margin-top: 5px;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            border-radius: 3em;
+            background-color: rgb(160,160,160,0.4);
         }
     </style>
 </head>
 <body>
 
-<h1>Match Box API Exercise</h1>
+<h1>Map Box API Exercise</h1>
 
+<div id="map-container">
 <div id="map"></div>
+
+<div id='menu'>
+    <input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
+    <label for='streets'>streets</label>
+    <input id='light-v10' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark-v10' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+    <label for='outdoors'>outdoors</label>
+    <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+</div>
+</div>
 
 
 <!-- === MAPBOX JS === -->
@@ -40,25 +71,40 @@
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
+
+    var favPlace1 = [-98.489615, 29.426827]; // Codeup
+    var favPlace2 = [-98.493647, 29.426702]; // Geekdom
+    var favPlace3 = [-98.6094, 29.5995]; // Six Flags
+
+    // ==== INITIAL MAP SETUP ====
     mapboxgl.accessToken = mapboxToken;
+
     var map = new mapboxgl.Map({
         container: "map",
         style: 'mapbox://styles/mapbox/streets-v9',
+        // Current Residing country. (U.S.)
         center: [-95.7129, 37.0902]
     });
 
+    // ==== MAPBOX GEOCODER ====
     map.addControl(new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
+        mapboxgl: mapboxgl,
     }));
 
-    // geocode("5636 Poppy Seed Run, San Antonio, TX, 78238", mapboxToken).then(function(results) {
-    //     // logs the address for The Alamo
-    //     console.log(results);
-    //     map.setCenter(results);
-    //     map.setZoom(14);
-    //     // map.setZoom(3);
-    // });
+    // ==== MAP STYLE MENU ====
+    var layerList = document.getElementById('menu');
+    var inputs = layerList.getElementsByTagName('input');
+
+    function switchLayer(layer) {
+        var layerId = layer.target.id;
+        map.setStyle('mapbox://styles/mapbox/' + layerId);
+    }
+
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].onclick = switchLayer;
+    }
+
 </script>
 
 </body>
