@@ -1,10 +1,11 @@
-(function () {
-
+// (function () {
     "use strict";
     /**********************************************
      *            SETTING UP KEYS.JS
      *********************************************/
 // TODO TOGETHER: Open .gitignore and add keys.js. Add keys.js file and import to mapbox html file. Your api keys are stored in keys.js and are added to the .gitignore so they are protected
+
+    console.log(mapboxToken);
 
     /**********************************************
      *            CUSTOMIZING THE MAP
@@ -14,6 +15,15 @@
 // Zoom levels range from 0 up to 24, with 0 being a global view and 24 being the most detailed at street level (the max zoom level depends on the location).
 
 //TODO TOGETHER: Set map to san antonio area using the coordinates [-98.4916, 29.4252]
+
+mapboxgl.accessToken = mapboxToken;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    zoom: 14,
+    center: [-98.493629, 29.424122]
+});
+// map.scrollZoom.disable();
 
 //TODO: Experiment with different map styles, zoom levels, and centers. You will need to reference the mapbox docs. (~15 minutes)
 
@@ -29,6 +39,16 @@
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-98.4916, 29.4260]. This marker will mark the Alamo on our map.
 // TODO TOGETHER: Change the color of the marker
 
+var markerOptions = {
+    color: "#ff0000",
+    draggable: true
+};
+
+var marker = new mapboxgl.Marker(markerOptions)
+    .setLngLat([-98.486145, 29.425966])
+    .addTo(map);
+
+
 
 // TODO: Experiment with the color, and setting the LngLat
 // TODO: Update the marker object to make the marker draggable. *Hint: reference the docs!
@@ -42,11 +62,29 @@
 
 
 // TODO TOGETHER: Add a popup to the map over codeup. Set the html as a paragraph that says "Codeup Rocks!"
+
+var popup = new mapboxgl.Popup()
+    .setLngLat([-98.489615, 29.426827])
+    .setHTML("<p>Codeup Rocks!</p>")
+    .addTo(map);
+
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the alamo marker.
+
+// var alamoPopup = new mapboxgl.Popup()
+//     .setHTML("<p>Remember The Alamo!</p>")
+//     .addTo(map);
+//
+// marker.setPopup(alamoPopup);
 
 
 // TODO: Review the popup docs. What are some additional options we can pass to the popup?
 // TODO: Try setting the text by using ".setText()" instead of ".setHTML()"
+
+var alamoPopup = new mapboxgl.Popup()
+    .setText("<p>Remember The Alamo!</p>" + marker.getLngLat())
+    .addTo(map);
+
+marker.setPopup(alamoPopup);
 
 
     /**********************************************
@@ -65,6 +103,6 @@
 
 // TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -98.4861, lat: 29.4260} to get a physical address for the alamo
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
-});
+// });
 
 
