@@ -6,10 +6,25 @@
 
     <!-- === MAPBOX CSS === -->
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css' type='text/css' />
+    <link rel='stylesheet'
+          href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css'
+          type='text/css'/>
 
     <!-- === Custom CSS === -->
     <style>
+        /* ==== FUN, HACKY, CSS ==== */
+        .mapboxgl-popup-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .mapboxgl-popup-content {
+            text-align: center;
+        }
+        .mapboxgl-popup-content h3{
+            margin: 0;
+        }
+        /*====*/
+
         h1 {
             text-align: center;
         }
@@ -17,6 +32,8 @@
         #map-container {
             display: flex;
             justify-content: center;
+            margin-top: 5em;
+            position: relative;
         }
 
         #map {
@@ -29,11 +46,12 @@
 
         #menu {
             position: absolute;
-            margin-top: 5px;
+            margin-top: -3em;
+            left: 7em;
             padding: 10px;
             font-family: 'Open Sans', sans-serif;
             border-radius: 3em;
-            background-color: rgb(160,160,160,0.4);
+            background-color: rgb(160, 160, 160, 0.4);
         }
     </style>
 </head>
@@ -42,20 +60,20 @@
 <h1>Map Box API Exercise</h1>
 
 <div id="map-container">
-<div id="map"></div>
+    <div id="map"></div>
 
-<div id='menu'>
-    <input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
-    <label for='streets'>streets</label>
-    <input id='light-v10' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark-v10' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
-    <label for='outdoors'>outdoors</label>
-    <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
-</div>
+    <div id='menu'>
+        <input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
+        <label for='streets'>streets</label>
+        <input id='light-v10' type='radio' name='rtoggle' value='light'>
+        <label for='light'>light</label>
+        <input id='dark-v10' type='radio' name='rtoggle' value='dark'>
+        <label for='dark'>dark</label>
+        <input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+        <label for='outdoors'>outdoors</label>
+        <input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+        <label for='satellite'>satellite</label>
+    </div>
 </div>
 
 
@@ -82,6 +100,7 @@
     var map = new mapboxgl.Map({
         container: "map",
         style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 1,
         // Current Residing country. (U.S.)
         center: [-95.7129, 37.0902]
     });
@@ -105,6 +124,69 @@
         inputs[i].onclick = switchLayer;
     }
 
+    // ==== FAV-PLACES array
+    var favPlaces = [
+        {
+            name: "Codeup",
+            address: favPlace1,
+            about: "Rubber Ducky Factory",
+            site: "https\:\/\/codeup.com\/"
+        },
+        {
+            name: "Geekdom",
+            address: favPlace2,
+            about: "",
+            site: "https\:\/\/geekdom.com\/"
+        },
+        {
+            name: "Six Flags",
+            address: favPlace3,
+            about: "Go Big! Go Six Flags!",
+            site: "https:\/\/www.sixflags.com\/"
+        }
+    ];
+
+    // ==== TURN SECONDS TO MILI-SECONDS ====
+    function delay(x) {
+        x = x * 1000;
+        return x;
+    }
+
+    // ==== TIMEOUTS : SHOW FAV-CITY USING GEOCODE HELPER ====
+    var cityTimeout = setTimeout(function () {
+        geocode("san antonio, tx", mapboxToken).then(function (results) {
+            console.log(results);
+            map.setCenter(results);
+            map.setZoom(10);
+        });
+    }, delay(5));
+
+    var favPlace1Timeout = setTimeout(function () {
+        map.setZoom(14);
+        map.setCenter(favPlace1)
+    }, delay(10));
+
+    // TODO: Add a checkbox input to change map.zoom property
+    // TODO: ADD flyto functionality to timeout functions
+
+    // ==== REFACTORED FAV-PLACES ====
+    favPlaces.forEach(function (place) {
+        var name = "<h3>" + place.name + "</h3>";
+        var about = "<p>" + place.about + "</p>";
+        var site = "<a href=\"" + place.site + "\" class=\"popupLink\"" + ">Visit</a>";
+
+        var popup = new mapboxgl.Popup()
+            .setHTML(name + about + site)
+            .addTo(map);
+
+        var Marker = new mapboxgl.Marker()
+            .setLngLat(place.address)
+            .addTo(map)
+            .togglePopup()
+        .setPopup(popup);
+
+        Marker.setPopup(popup);
+    })
 </script>
 
 </body>
