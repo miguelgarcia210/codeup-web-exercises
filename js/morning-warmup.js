@@ -216,3 +216,15 @@ for (var i = 1; i <= 100; i++) {
         console.log(i);
     }
 }
+
+// Write a JavaScript function that will return the number 5, but only when passed the string 'five'
+
+function showFive(x) {
+    if (x === "five") {
+        return 5;
+    } else {
+        return false;
+    }
+}
+
+console.log(showFive("five"));
