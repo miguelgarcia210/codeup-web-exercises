@@ -228,3 +228,41 @@ function showFive(x) {
 }
 
 console.log(showFive("five"));
+
+// Write a JavaScript function that will return the shopping cart object with the most oranges.
+
+var shoppingCarts = [
+    {
+        apples: 8,
+        bananas: 2,
+        oranges: 4,
+        grapes: 24
+    }, {
+        apples: 3,
+        bananas: 6,
+        oranges: 8,
+        grapes: 12
+    } , {
+        apples: 0,
+        bananas: 12,
+        oranges: 0,
+        grapes: 0
+    } , {
+        apples: 4,
+        bananas: 0,
+        oranges: 12,
+        grapes: 10
+    }
+];
+
+function theMostOranges() {
+    var most = shoppingCarts[0].oranges;
+    shoppingCarts.forEach(function (cart) {
+        if (cart.oranges > most) {
+            most = cart;
+        }
+    });
+    return most;
+}
+
+console.log(theMostOranges(shoppingCarts));
