@@ -266,3 +266,44 @@ function theMostOranges() {
 }
 
 console.log(theMostOranges(shoppingCarts));
+
+// Write a JavaScript function that accepts an array of student objects and returns an array of student objects that are not registered for class
+
+var students = [
+    {
+        name: "Mary",
+        grade: 10,
+        gpa: 3.7,
+        isRegistered: true
+    },
+    {
+        name: "Tim",
+        grade: 12,
+        gpa: 3.2,
+        isRegistered: false
+    },
+    {
+        name: "Ellie",
+        grade: 9,
+        gpa: 4.0,
+        isRegistered: false
+    },
+    {
+        name: "Alex",
+        grade: 10,
+        gpa: 3.9,
+        isRegistered: true
+    }
+];
+
+function notRegistered(stuArr) {
+    var nonRegisteredArr = [];
+    stuArr.forEach(function (student) {
+       if (student.isRegistered === false) {
+           nonRegisteredArr.push(student);
+       }
+    });
+    return nonRegisteredArr;
+}
+
+console.log(notRegistered(students));
