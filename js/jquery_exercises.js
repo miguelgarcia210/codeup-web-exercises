@@ -20,7 +20,7 @@ alert(myListContainer);
 //  5. Use the same id on 2 elements. How does this change the jQuery selection?
 // SELECTS THE FIRST ID ONLY
 // var duplicateListItemID = $("#list-item-6").html();
-// alert(duplicateListItemID);
+// alert(duplicateListItemID);-
 
 //  6. Remove the duplicate id. Each id should be unique on that page.
 
@@ -35,8 +35,29 @@ $(".codeup").css("border", "1px solid red");
 // TODO: Element Selectors
 //  1. Remove your custom jQuery code from previous exercises.
 //  1. Using jQuery, set the font-size of all li elements to 20px.
+$("li").css("font-size", "20px");
 //  1. Craft selectors that highlight all the h1, p, and li elements.
+$("h1").css("background-color", "yellow");
+$("p").css("background-color", "yellow");
+$("li").css("background-color", "yellow");
 //  1. Create a jQuery statement to alert the contents of your h1 element(s).
+var headerContents = $("h1").html();
+alert(headerContents);
 
 // TODO: Multiple Selectors
 //  1. Combine your selectors that highlight all the h1, p, and li elements.
+
+$("#list-item-5").html("<p style='font-size: 24px'>WAIT FOR IT...</p>");
+
+function convertSeconds(x) {
+    return x * 1000;
+}
+
+function myFunction() {
+    setTimeout(function () {
+        $("h1, p, li").css("background-color", "red");
+        console.log("hello");
+    }, convertSeconds(10));
+}
+
+myFunction();
