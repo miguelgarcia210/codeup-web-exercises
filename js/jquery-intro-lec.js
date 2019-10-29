@@ -36,15 +36,15 @@
 
 window.onload = function() {
     alert( 'The page has finished loading!' );
-}
+};
 
 // jQuery version: This will fire before the images are loaded
 // We use jQuery to select the document
 // we add the event listener 'ready'
 // the event listener will fire before the images are loaded
-$(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
-});
+// $(document).ready(function() {
+//     alert( 'The DOM has finished loading!' );
+// });
 
 
 
