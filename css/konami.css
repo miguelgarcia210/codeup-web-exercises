@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .controller-container {
@@ -35,11 +36,101 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 /* ===== ^ ===== */
-/*check to see if this should be controller-pad and not dpad*/
 .dpad {
-    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-area: 1 / 1 / 2 / 2;
 }
+
+.key-up-down-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #C9C2BD;
+    width: 6.4em;
+    height: 2em;
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari prior 9.0 */
+    transform: rotate(90deg); /* Standard syntax */
+}
+
+.key-right-left-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #C9C2BD;
+    width: 6.4em;
+    height: 2em;
+}
+
+/* ----- INDIVIDUAL ARROW KEYS ----- */
+.key-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.8em;
+    width: 1.8em;
+}
+
+.up-key {
+    width: 24px;
+    height: 0;
+    margin-right: auto;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right:12px solid black;
+}
+
+.key-right-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 1.8em;
+    width: 1.8em;
+}
+.right-key {
+    width: 24px;
+    height: 0;
+    margin-left: auto;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid black;
+}
+
+.key-left-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    height: 1.8em;
+    width: 1.8em;
+}
+.left-key {
+    width: 24px;
+    height: 0;
+    margin-right: auto;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid black;
+}
+.key-down-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 1.8em;
+    width: 1.8em;
+}
+.down-key {
+    width: 24px;
+    height: 0;
+    margin-left: auto;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left:12px solid black;
+}
+
 /* ===== CENTER CONTROLLER AREA ===== */
 .button-list {
     display: flex;
@@ -87,7 +178,7 @@ body {
     align-items: center;
 }
 .button-list li:nth-child(3) span {
-    font-size: 12px;
+    font-size: 7px;
     color: red;
 }
 /* SELECT BUTTON TITLE */
@@ -118,4 +209,94 @@ body {
 }
 
 /* ===== CONTROLLER RIGHT SECTION ===== */
+.controller-right-container {
+    display: flex;
+    flex-direction: column;
+}
 
+.buttons-ab-container {
+    display: flex;
+    margin: auto 1.2em 1px;
+}
+
+.button-a-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    background-color: #CAC4BB;
+    border-radius: 2px;
+}
+
+.button-a {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: red;
+    border-radius: 50%;
+}
+.button-b-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 2em;
+    height: 2em;
+    background-color: #CAC4BB;
+    border-radius: 2px;
+}
+
+.button-b {
+    width: 1.7em;
+    height: 1.7em;
+    background-color: red;
+    border-radius: 50%;
+}
+
+/* ----- AB-BUTTONS-TEXT -----*/
+.buttons-ab-text-container {
+    display: flex;
+    align-items: center;
+    margin: 0 1.2em;
+}
+
+.button-a-text-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 2em;
+    border-radius: 2px;
+}
+
+.button-a-text {
+    font-size: 8px;
+    color: red;
+}
+
+.button-b-text-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 2em;
+    margin-left: auto;
+    border-radius: 2px;
+}
+
+.button-b-text {
+    font-size: 8px;
+    color: red;
+}
+
+/* ----- CONTROLLER COMPANY NAME -----*/
+
+.company-name-controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.3em;
+}
+
+.company-name-text {
+    font-size: 9px;
+    color: red;
+}
