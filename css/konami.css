@@ -4,10 +4,43 @@
 
 body {
     margin: 0;
+    background-color: #76BDE7;
     font-family: 'Press Start 2P', cursive;
 }
 
+h1 {
+    text-align: center;
+}
+
+.arcade-machine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arcade-machine-container > img {
+    position: absolute;
+    width: 375px;
+    height: 30em;
+    background-size: cover;
+    top: 5em;
+}
+
+.tv-screen {
+    position: relative;
+    top: 7.7em;
+    margin-bottom: 9.2em;
+    margin-right: 2.85em;
+    width: 7.05em;
+    height: 5.1em;
+    border: 2px solid yellow;
+    border-radius: 8px;
+    background-color: rgb(250,128,114,0.5);
+}
+
 .controller-container {
+    position: absolute;
+    width: calc(100% - 1em);
     display: flex;
     align-items: center;
     margin: 0 5px;
@@ -15,6 +48,8 @@ body {
     background-color: #CBC4BB;
     border: .5em solid grey;
     border-radius: 10px;
+    right: 0;
+    top:36em;
 }
 
 .controller {
@@ -35,6 +70,7 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
 /* ===== ^ ===== */
 .dpad {
     display: flex;
@@ -81,7 +117,7 @@ body {
     margin-right: auto;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
-    border-right:12px solid black;
+    border-right: 12px solid black;
 }
 
 .key-right-container {
@@ -91,6 +127,7 @@ body {
     height: 1.8em;
     width: 1.8em;
 }
+
 .right-key {
     width: 24px;
     height: 0;
@@ -107,6 +144,7 @@ body {
     height: 1.8em;
     width: 1.8em;
 }
+
 .left-key {
     width: 24px;
     height: 0;
@@ -115,6 +153,7 @@ body {
     border-bottom: 12px solid transparent;
     border-right: 12px solid black;
 }
+
 .key-down-container {
     display: flex;
     align-items: center;
@@ -122,13 +161,14 @@ body {
     height: 1.8em;
     width: 1.8em;
 }
+
 .down-key {
     width: 24px;
     height: 0;
     margin-left: auto;
     border-top: 12px solid transparent;
     border-bottom: 12px solid transparent;
-    border-left:12px solid black;
+    border-left: 12px solid black;
 }
 
 /* ===== CENTER CONTROLLER AREA ===== */
@@ -141,57 +181,66 @@ body {
     height: 100%;
     width: 100%;
 }
-    /* ----- BUTTON STYLING ----- */
+
+/* ----- BUTTON STYLING ----- */
 
 /* Select all button items */
 .button-item {
     /*border: 1px solid red;*/
     border-radius: 2px;
 }
+
 /* Select all button-items EXCEPT the fourth */
 .button-list li:not(:nth-child(4)) {
     height: 1em;
     background-color: #919588;
 }
+
 /* Select the fourth button-item */
 .button-list li:nth-child(4) {
     height: 2em;
     background-color: #CBC4BB;
 }
 
-    /* ----- BUTTON SPACING ----- */
+/* ----- BUTTON SPACING ----- */
 .button-list li:first-child {
     margin-bottom: auto;
 }
+
 .button-list li:last-child {
     margin-top: auto;
 }
+
 .button-list li:nth-child(n+2):not(:last-child) {
     margin: 3px 0;
 }
 
-    /* ----- MAIN CENTER BUTTONS TITLES ----- */
+/* ----- MAIN CENTER BUTTONS TITLES ----- */
 /* MAIN CENTER BUTTONS CONTAINER */
 .button-list li:nth-child(3) {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .button-list li:nth-child(3) span {
     font-size: 7px;
     color: red;
 }
+
 /* SELECT BUTTON TITLE */
 .button-list li:nth-child(3) span:first-child {
     margin-left: 1em;
     margin-right: auto;
 }
+
 /* START BUTTON TITLE */
 .button-list li:nth-child(3) span:last-child {
     margin-right: 1.5em;
     margin-left: auto;
 }
-    /* ----- MAIN CENTER BUTTONS ----- */
+
+/* ----- MAIN CENTER BUTTONS ----- */
 /*TODO: add a border around a div encapsulating the two main center buttons (need to create div) */
 
 .button-list li:nth-child(4) {
@@ -235,6 +284,7 @@ body {
     background-color: red;
     border-radius: 50%;
 }
+
 .button-b-container {
     display: flex;
     justify-content: center;
@@ -299,4 +349,14 @@ body {
 .company-name-text {
     font-size: 9px;
     color: red;
+}
+
+@media screen and (min-width:500px) {
+    .controller-container {
+        width: 375px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        top: 33em;
+    }
 }
