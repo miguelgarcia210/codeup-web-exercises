@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"/>
     <title>Konami Code</title>
     <link rel="stylesheet" href="css/konami.css">
 </head>
@@ -32,25 +33,30 @@
                 </ul>
             </div>
             <div id="controller-right-container" class="controller-right-container">
-                <div id="controller-company-name" class="controller-name">
-
+                <div id="controller-company-name" class="company-name-controller">
+                    <span id="controller-company-name-text" class="company-name-text">Nintendo<sup>&reg</sup></span>
                 </div>
-                <div id="ab-buttons-container" class="ab-buttons-container">
-                    <div id="a-button-container">
+                <div id="ab-buttons-container" class="buttons-ab-container">
+                    <div id="a-button-container" class="button-a-container">
                         <div id="a-button" class="button-a"></div>
-                        <span>A</span>
                     </div>
-                    <div id="b-button-container">
+                    <div id="b-button-container" class="button-b-container">
                         <div id="b-button" class="button-b"></div>
-                        <span>B</span>
                     </div>
-
+                </div>
+                <div id="ab-buttons-text-container" class="buttons-ab-text-container">
+                    <div id="a-button-text-container" class="button-a-text-container">
+                        <span id="a-button-text" class="button-a-text">A</span>
+                    </div>
+                    <div id="b-button-text-container" class="button-b-text-container">
+                        <span id="b-button-text" class="button-b-text">B</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<script src="/js/jquery-2.2.4.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
 </body>
 </html>
