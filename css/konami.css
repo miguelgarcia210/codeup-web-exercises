@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.controller-container {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+    height: 10em;
+    background-color: #CBC4BB;
+    border: .5em solid grey;
+    border-radius: 10px;
+}
+
+.controller {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: calc(100% - 1em);
+    height: 7.4em;
+    background-color: #2E303D;
+    border-radius: 4px;
+
+}
+
+/* ===== CONTROLS CONTAINER ===== */
+.controls {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* ===== ^ ===== */
+/*check to see if this should be controller-pad and not dpad*/
+.dpad {
+    border: 1px solid red;
+    grid-area: 1 / 1 / 2 / 2;
+}
+/* ===== CENTER CONTROLLER AREA ===== */
+.button-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    width: 100%;
+}
+    /* ----- BUTTON STYLING ----- */
+
+/* Select all button items */
+.button-item {
+    /*border: 1px solid red;*/
+    border-radius: 2px;
+}
+/* Select all button-items EXCEPT the fourth */
+.button-list li:not(:nth-child(4)) {
+    height: 1em;
+    background-color: #919588;
+}
+/* Select the fourth button-item */
+.button-list li:nth-child(4) {
+    height: 2em;
+    background-color: #CBC4BB;
+}
+
+    /* ----- BUTTON SPACING ----- */
+.button-list li:first-child {
+    margin-bottom: auto;
+}
+.button-list li:last-child {
+    margin-top: auto;
+}
+.button-list li:nth-child(n+2):not(:last-child) {
+    margin: 3px 0;
+}
+
+    /* ----- MAIN CENTER BUTTONS TITLES ----- */
+/* MAIN CENTER BUTTONS CONTAINER */
+.button-list li:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-list li:nth-child(3) span {
+    font-size: 12px;
+    color: red;
+}
+/* SELECT BUTTON TITLE */
+.button-list li:nth-child(3) span:first-child {
+    margin-left: 1em;
+    margin-right: auto;
+}
+/* START BUTTON TITLE */
+.button-list li:nth-child(3) span:last-child {
+    margin-right: 1.5em;
+    margin-left: auto;
+}
+    /* ----- MAIN CENTER BUTTONS ----- */
+/*TODO: add a border around a div encapsulating the two main center buttons (need to create div) */
+
+.button-list li:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-list li:nth-child(4) div {
+    height: .5em;
+    width: 2em;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+/* ===== CONTROLLER RIGHT SECTION ===== */
+
