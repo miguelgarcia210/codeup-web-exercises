@@ -117,20 +117,21 @@ alert(helloThere(promptedResponse));
 //Write a JavaScript function that accepts an array and returns the length of that array
 
 function arrayLength(x) {
-    return x.length   
+    return x.length
 }
-var myArray = [0,1,2,3,4];
+
+var myArray = [0, 1, 2, 3, 4];
 
 console.log("The length of the array is " + arrayLength(myArray));
 
 //Write a JavaScript function that returns the quotient of two numbers, but only when passed two numbers. It should return false in all other cases
 
 function quotient(a, b) {
-   if (typeof parseFloat(a) === "number" && typeof parseFloat(b) === "number") {
-       return Math.floor(parseFloat(a) / parseFloat(b));
-   } else {
-       return false;
-   }
+    if (typeof parseFloat(a) === "number" && typeof parseFloat(b) === "number") {
+        return Math.floor(parseFloat(a) / parseFloat(b));
+    } else {
+        return false;
+    }
 }
 
 console.log(quotient("5", "2"));
@@ -175,9 +176,9 @@ function roundDecimal(x) {
 console.log(roundDecimal(3.14));
 console.log(roundDecimal(99.99));
 console.log(roundDecimal("hello"));
-console.log(roundDecimal([1,2,3,4,5]));
-console.log(roundDecimal(["1","2","3","4","5"]));
-console.log(roundDecimal(["hola","bonjour","hi","hello"]));
+console.log(roundDecimal([1, 2, 3, 4, 5]));
+console.log(roundDecimal(["1", "2", "3", "4", "5"]));
+console.log(roundDecimal(["hola", "bonjour", "hi", "hello"]));
 
 // Write a JavaScript function that counts from 1 up to the number that the user passes in. For example, if the argument passed in is 10, the function should log numbers 1 through 10.
 
@@ -186,6 +187,7 @@ function counting(x) {
         console.log(i);
     }
 }
+
 counting(15);
 
 // Write a JavaScript function that createPersonObject that takes in a name (that is a string) and an age (that is a number) and returns a person object containing the name and age.
@@ -208,9 +210,9 @@ function createPersonObject(name, age) {
 for (var i = 1; i <= 100; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
         console.log("FizzBuzz");
-    } else if (i % 3 === 0 ) {
+    } else if (i % 3 === 0) {
         console.log("Fizz");
-    } else if (i % 5 === 0 ) {
+    } else if (i % 5 === 0) {
         console.log("Buzz");
     } else {
         console.log(i);
@@ -242,12 +244,12 @@ var shoppingCarts = [
         bananas: 6,
         oranges: 8,
         grapes: 12
-    } , {
+    }, {
         apples: 0,
         bananas: 12,
         oranges: 0,
         grapes: 0
-    } , {
+    }, {
         apples: 4,
         bananas: 0,
         oranges: 12,
@@ -299,11 +301,54 @@ var students = [
 function notRegistered(stuArr) {
     var nonRegisteredArr = [];
     stuArr.forEach(function (student) {
-       if (student.isRegistered === false) {
-           nonRegisteredArr.push(student);
-       }
+        if (student.isRegistered === false) {
+            nonRegisteredArr.push(student);
+        }
     });
     return nonRegisteredArr;
 }
 
 console.log(notRegistered(students));
+
+// Write a JavaScript function that will return an array of hamster objects sorted by height in ascending order.
+var hamsters = [
+    {
+        name: "Hamtaro",
+        heightInMM: 86,
+        fur: ['orange', 'white'],
+        gender: "male",
+        dateOfBirth: "August 6"
+    }, {
+        name: "Bijou",
+        heightInMM: 75,
+        fur: ['white'],
+        gender: "female",
+        dateOfBirth: "July 10"
+    }, {
+        name: "Oxnard",
+        heightInMM: 100,
+        fur: ['grey', 'white'],
+        gender: "male",
+        dateOfBirth: "May 3"
+    }, {
+        name: "Boss",
+        heightInMM: 120,
+        fur: ['brown', 'white'],
+        gender: "male",
+        dateOfBirth: "Spetember 21"
+    }, {
+        name: "Snoozer",
+        heightInMM: 85,
+        fur: ['brown', 'white', "pink"],
+        gender: "male",
+        dateOfBirth: "January 14"
+    }
+];
+
+function sortHeight(x) {
+    return x.sort(function (a, b) {
+        return a.heightInMM - b.heightInMM;
+    });
+}
+
+console.log(sortHeight(hamsters));
