@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Konami Code</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
@@ -12,10 +14,22 @@
     <div id="nes-controller" class="controller">
         <div id="controller-pad" class="controls">
             <div id="controller-dpad" class="dpad">
-                <div id="up-arrow-key" class="up-key"></div>
-                <div id="right-arrow-key" class="right-key"></div>
-                <div id="down-arrow-key" class="down-key"></div>
-                <div id="left-arrow-key" class="left-key"></div>
+                <div id="up-down-key-container" class="key-up-down-container">
+                    <div id="up-key-container" class="key-up-container">
+                        <div id="up-arrow-key" class="up-key"></div>
+                    </div>
+                    <div id="down-key-container" class="key-down-container">
+                        <div id="down-arrow-key" class="down-key"></div>
+                    </div>
+                </div>
+                <div id="right-left-key-container" class="key-right-left-container">
+                    <div id="left-key-container" class="key-left-container">
+                        <div id="left-arrow-key" class="left-key"></div>
+                    </div>
+                    <div id="right-key-container" class="key-right-container">
+                        <div id="right-arrow-key" class="right-key"></div>
+                    </div>
+                </div>
             </div>
             <div id="controller-center-container" class="center-container">
                 <ul id="center-buttons" class="button-list">
