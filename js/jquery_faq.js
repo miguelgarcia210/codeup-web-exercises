@@ -29,3 +29,7 @@ $("#button").click(function (event) {
 $("h3").click(function(event) {
    $(this).parent().children("li").toggleClass("bold");
 });
+
+$("li").click(function (event) {
+   $(this).parent().children("li").first().toggleClass("blue-text");
+});
