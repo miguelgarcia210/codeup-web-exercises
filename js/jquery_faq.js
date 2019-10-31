@@ -25,3 +25,7 @@ $("#button").click(function (event) {
         $(this).html("Don't Click!")
     }
 });
+
+$("h3").click(function(event) {
+   $(this).parent().children("li").toggleClass("bold");
+});
