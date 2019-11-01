@@ -352,3 +352,5 @@ function sortHeight(x) {
 }
 
 console.log(sortHeight(hamsters));
+
+// TODO: List out three of your favorite web applications. explain why
