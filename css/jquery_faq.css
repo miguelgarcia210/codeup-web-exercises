@@ -1,3 +1,51 @@
 .invisible {
     visibility: hidden;
 }
+
+.highlight {
+    color: #eeff00;
+}
+
+.yellow-back {
+    background-color: yellow;
+}
+
+.park-button {
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.blue-text {
+    color: blue;
+}
+
+button:focus {
+    outline:0;
+}
+
+.show {
+    background-color: paleturquoise;
+    border-radius: 10px;
+}
+
+.wall-container {
+    display: flex;
+    justify-content: center;
+}
+
+.collage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 20em;
+    margin: 0 6.66666667em 0 0;
+}
+
+.button-center-active {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.button-center-idle {
+    grid-area: 1 / 2/ 2 / 3;
+}
