@@ -354,3 +354,36 @@ function sortHeight(x) {
 console.log(sortHeight(hamsters));
 
 // TODO: List out three of your favorite web applications. explain why
+
+// TODO: Write a JavaScript function that will take in a whole number from 1-10, and return the number spelled out as a string (i.e. 1 returns 'one')
+
+function numberRangeToString(num) {
+    switch (num) {
+        case 0:
+            return 'Zero';
+        case 1:
+            return 'One';
+        case 2:
+            return 'two';
+        case 3:
+            return 'three';
+        case 4:
+            return 'four';
+        case 5:
+            return 'five';
+        case 6:
+            return 'six';
+        case 7:
+            return 'seven';
+        case 8:
+            return 'eight';
+        case 9:
+            return 'nine';
+        case 10:
+            return 'ten';
+        default:
+            return 'not a number between 1 and 10.'
+    }
+}
+
+console.log(numberRangeToString(9));
