@@ -1,5 +1,9 @@
 "use strict";
 
+var h3 = $("h3");
+var ul = $("ul");
+var registerTitle = $("#register");
+
 $(document).ready(function () {
     $("dd").addClass("invisible");
 });
@@ -26,7 +30,7 @@ $("#button").click(function (event) {
     }
 });
 
-$("h3").click(function(event) {
+h3.click(function(event) {
    $(this).parent().children("li").toggleClass("bold");
 });
 
@@ -113,5 +117,22 @@ $("#card-button").click(function (event) {
    }
 });
 
-// var card$(".card")
+// Effects exercise
 
+$("div").first().children("span").first().click(function () {
+   $(this).prev().hide();
+});
+
+// Make ul's with an h3 right before start out hidden.
+h3.next("ul").hide();
+// Display/hide ul's when h3 is clicked
+ul.prev("h3").click(function () {
+    $(this).next().slideToggle();
+});
+
+function convertToMiliSeconds(num) {
+    return num * 1000;
+}
+
+registerTitle.hide();
+registerTitle.delay(convertToMiliSeconds(2)).fadeIn(convertToMiliSeconds(5));
