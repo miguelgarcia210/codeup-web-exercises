@@ -21,7 +21,7 @@ $(document).ready(function(){
      * endpoint, then query it for a username...
      */
 
-    // console.log($.ajax("https://hookb.in/Z2Zkbda7R6U1MVqkbNDJ?username=Bob"));
+    // console.log($.ajax("https://hookb.in/E7b1JgRmVRCdrLgJYK77?username=Bob"));
 
     /*
      * TO DO TOGETHER: For this next one, we'll send over some data. Add the
@@ -37,7 +37,7 @@ $(document).ready(function(){
     //     }
     // };
 
-    // console.log($.ajax("https://hookb.in/Z2Zkbda7R6U1MVqkbNDJ", person));
+    // console.log($.ajax("https://hookb.in/E7b1JgRmVRCdrLgJYK77", person));
 
     /*
      * TO DO: Refactor the first example using a GET request object instead of
@@ -51,7 +51,7 @@ $(document).ready(function(){
     //     }
     // };
     //
-    // console.log($.ajax("https://hookb.in/Z2Zkbda7R6U1MVqkbNDJ", bob));
+    // console.log($.ajax("https://hookb.in/E7b1JgRmVRCdrLgJYK77", bob));
     /*********************************************
      *              REQUESTS and RESPONSES
      ******************************************** */
