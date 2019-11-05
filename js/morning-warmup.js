@@ -387,3 +387,17 @@ function numberRangeToString(num) {
 }
 
 console.log(numberRangeToString(9));
+
+// Write a JavaScript function that will return 'You're welcome', but only when passed a JavaScript object with a property of gratitude that has the value of 'Thank you'.
+
+var myObject = {
+    gratitdue: "Thank you"
+};
+
+function sayWelcome(obj) {
+    if (obj.gratitdue === "Thank you") {
+        return "You're welcome";
+    }
+}
+
+console.log(sayWelcome(myObject));

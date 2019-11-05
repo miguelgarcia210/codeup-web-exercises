@@ -135,4 +135,4 @@ function convertToMiliSeconds(num) {
 }
 
 registerTitle.hide();
-registerTitle.delay(convertToMiliSeconds(2)).fadeIn(convertToMiliSeconds(5));
+registerTitle.delay(convertToMiliSeconds(8)).fadeIn(convertToMiliSeconds(5));

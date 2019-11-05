@@ -13,11 +13,23 @@
 </head>
 <body>
 
-<div>
-    <h1 class="alert alert-info alert-dismissible" role="alert">Would you like to sign up for our newsletter?</h1>
-    <span class="close" data-dismiss="alert">x</span>
+<div class="alert alert-info alert-dismissible" role="alert">
+    <h1>Would you like to sign up for our newsletter?</h1>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">x</span>
+    </button>
 </div>
-<h2 id="register">Test</h2>
+
+<button id="register" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Register</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            Register
+        </div>
+    </div>
+</div>
+<!--<h2 id="register">Test</h2>-->
 
 <dl>
     <dt>Park</dt>
