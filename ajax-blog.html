@@ -8,12 +8,18 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- CUSTOM CSS -->
+    <style>
+
+    </style>
 </head>
 <body>
 
 <div id="posts">
 
 </div>
+
+<button id="update-button">Update</button>
 
 <!-- BOOTSTRAP SCRIPTS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -26,10 +32,40 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
 <!-- CUSTOM SCRIPT -->
+<script src="js/jquery-2.2.4.js"></script>
 <script>
     // TODO: Add your own Bootstrap theme to this file as well. Feel free to use the same one as your store or choose a different one.
+
     // TODO: Use Ajax to load the contents of blog.json and add the data from it to your #posts div.
+    function renderPosts() {
+        var blogPosts = $.get("data/blog.json");
+
+        blogPosts.done(function (data) {
+            $.each(data, function (index, post) {
+                var content = "<h3>" + post.title + "</h3>";
+                content += "<p>" + post.content + "</p>";
+                // Set 'categories' property into an unordered list
+                content += "<ul>";
+                post.categories.forEach(function (category) {
+                    content += "<li>" + category + "</li>";
+                });
+                content += "</ul>";
+                content += "<h4>" + post.date + "</h4>";
+                content += "<hr>";
+
+                $("#posts").append(content);
+            })
+        })
+    }
+
+    renderPosts();
+
     // TODO: Add additional entries to blog.json and make sure your changes are reflected on the page.
+
+    $("#update-button").click(function () {
+        $("#posts").html("");
+        renderPosts();
+    })
 </script>
 
 </body>
