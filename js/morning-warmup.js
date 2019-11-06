@@ -401,3 +401,16 @@ function sayWelcome(obj) {
 }
 
 console.log(sayWelcome(myObject));
+
+// Write a JavaScript function that returns a random boolean
+
+function randBool() {
+    var randoNum = Math.floor(Math.random() * 2);
+    if (randoNum === 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+console.log(randBool());
