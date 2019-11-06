@@ -1,5 +1,12 @@
 // (function (){
 "use strict";
+// Check if browser supports .svg format
+if (Modernizr.svg) {
+    console.log("Hurray!");
+} else {
+    console.log("That sucks");
+}
+
 var forecastContainer = $("#forecast-container");
 
 
@@ -50,7 +57,7 @@ function currentWeatherIcon(x) {
             // icon = "img/weather_map_icons";
             break;
         default:
-            // icon = "img/weather_map_icons";
+        // icon = "img/weather_map_icons";
     }
     return icon;
 }
