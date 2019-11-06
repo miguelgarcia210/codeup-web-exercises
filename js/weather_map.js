@@ -1,9 +1,15 @@
 // (function (){
 "use strict";
 // Check if browser supports .svg format
+var weatherIconFormat = "";
+var weatherIconDirectory = "";
+
 if (Modernizr.svg) {
+    weatherIconFormat = ".svg";
+    weatherIconDirectory = "img/weather_map_icons/svg/";
     console.log("Hurray!");
 } else {
+    weatherIconFormat = ".png";
     console.log("That sucks");
 }
 
@@ -18,6 +24,7 @@ function currentWeatherIcon(x) {
     var icon = "";
     switch (x.currently.icon) {
         case "clear-day":
+            icon =
             // icon = "img/weather_map_icons";
             break;
         case "clear-night":
