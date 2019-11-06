@@ -11,7 +11,46 @@ function currentWeatherIcon(x) {
     var icon = "";
     switch (x.currently.icon) {
         case "clear-day":
-
+            // icon = "img/weather_map_icons";
+            break;
+        case "clear-night":
+            // icon = "img/weather_map_icons";
+            break;
+        case "rain":
+            // icon = "img/weather_map_icons";
+            break;
+        case "snow":
+            // icon = "img/weather_map_icons";
+            break;
+        case "sleet":
+            // icon = "img/weather_map_icons";
+            break;
+        case "wind":
+            // icon = "img/weather_map_icons";
+            break;
+        case "fog":
+            // icon = "img/weather_map_icons";
+            break;
+        case "cloudy":
+            // icon = "img/weather_map_icons";
+            break;
+        case "partly-cloudy-day":
+            // icon = "img/weather_map_icons";
+            break;
+        case "partly-cloudy-night":
+            // icon = "img/weather_map_icons";
+            break;
+        case "hail":
+            // icon = "img/weather_map_icons";
+            break;
+        case "thunderstorm":
+            // icon = "img/weather_map_icons";
+            break;
+        case "tornado":
+            // icon = "img/weather_map_icons";
+            break;
+        default:
+            // icon = "img/weather_map_icons";
     }
     return icon;
 }
@@ -34,6 +73,7 @@ function getWeather() {
 
     })
 }
+
 // getWeather();
 
 // });
