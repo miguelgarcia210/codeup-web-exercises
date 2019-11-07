@@ -193,8 +193,21 @@ function renderSummary(source, index) {
     return weatherProperty("summary", "Details", source, index);
 }
 
-function getWeather() {
-    var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936" + "?units=auto");
+// ===== RESET WEATHER CARDS ====
+function resetWeatherCards() {
+    $("#daily-forecast-container .weather-card").each(function () {
+        $(this).html("");
+    });
+}
+
+
+// ===== RETRIEVE WEATHER ===== * default coordinates set to San Antonio, TX
+// function getWeather(latitude = "29.4241",longitude = "-98.4936") {
+function getWeather(latitude = "48.864716",longitude = "2.349014") {
+    var darSkyApi = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";
+    var weather = $.get(darSkyApi + darkSkyKey + "/" + latitude + "," + longitude + "?units=auto");
+//     function getWeather() {
+//     var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936" + "?units=auto");
     weather.done(function (data) {
         // ===== Update daily weather cards=====
         // NOTE: Arrays for daily weather information
@@ -249,15 +262,11 @@ function getWeather() {
             $(this).append(nextDailyPressure[index]);
             $(this).append(nextDailySummary[index]);
         });
-        // console.log(nextDailyImages);
-        // console.log(weatherInfo());
-        // console.log(data);
-
     })
-
 }
 
 getWeather();
+// getWeather("48.864716","2.349014");
 
 $("#forecast-button").click(function () {
     $(this).toggleClass("forecast-button-style");
@@ -275,8 +284,12 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
     zoom: 1,
-    center: [-95.7129, 37.0902]
+    center: [-95.7129, 37.0902],
+    hash: true
 });
+
+map.addControl(new mapboxgl.NavigationControl());
+map.scrollZoom.disable();
 
 // ===== CURRENT LOCATION BUTTON CLICKED =====
 function getLocation() {
@@ -292,8 +305,8 @@ function showPosition(position) {
         "latitude" : position.coords.latitude,
         "longitude" : position.coords.longitude
     };
-    console.log(currentLatLong);
-    return currentLatLong;
+    resetWeatherCards();
+    getWeather(currentLatLong.latitude,currentLatLong.longitude);
 }
 
 $("#current-location").click(function () {
