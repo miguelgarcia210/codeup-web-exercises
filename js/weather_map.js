@@ -278,4 +278,25 @@ var map = new mapboxgl.Map({
     center: [-95.7129, 37.0902]
 });
 
+// ===== CURRENT LOCATION BUTTON CLICKED =====
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    var currentLatLong = {
+        "latitude" : position.coords.latitude,
+        "longitude" : position.coords.longitude
+    };
+    console.log(currentLatLong);
+    return currentLatLong;
+}
+
+$("#current-location").click(function () {
+    getLocation();
+});
 // });

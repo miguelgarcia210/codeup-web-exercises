@@ -85,6 +85,13 @@ body {
 
 }
 
+/* ==== WEATHER BUTTON CONTAINER ==== */
+.weather-buttons {
+    display: flex;
+}
+
+.weather-buttons button:focus {outline:0;}
+
 /* ==== FORECAST BUTTON ==== */
 .forecast-button {
     height: 2em;
@@ -92,16 +99,22 @@ body {
     border: 1px solid red;
     border-radius: 5px;
     display: block;
-    margin: 5px 0 0 auto;
+    margin: 5px 5px 0 auto;
     background-color: skyblue;
 }
-.forecast-button:focus {outline:0;}
 
 .forecast-button-style {
     background-color: cadetblue;
     color: gold;
 }
-
+/* ==== CURRENT LOCATION BUTTON ==== */
+.current-location-button {
+    height: 2em;
+    width: auto;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 5px auto 0 5px;
+}
 /* ==== MAP ===== */
 
 .map {
