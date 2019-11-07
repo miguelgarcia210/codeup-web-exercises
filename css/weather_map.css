@@ -93,5 +93,20 @@ body {
     border-radius: 5px;
     display: block;
     margin: 5px 0 0 auto;
-    background-color: lawngreen;
+    background-color: skyblue;
+}
+.forecast-button:focus {outline:0;}
+
+.forecast-button-style {
+    background-color: cadetblue;
+    color: gold;
+}
+
+/* ==== MAP ===== */
+
+.map {
+    width: 100vw;
+    height: 20em;
+    border-radius: 1em;
+    border: 5px outset lightblue;
 }
