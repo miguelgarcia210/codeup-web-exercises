@@ -1,15 +1,13 @@
 // (function (){
 "use strict";
 
+// ALL LOCATIONS ARE Latitude, Longitude Use reverse method for map-box implementation.
+var defaultLocation = [29.4241, -98.4936]; // SAN ANTONIO, TX
+var currentLocation = [];
+var draggedLocation =[];
+
 // ===== SELECTOR VARIABLES =====
 //      ---- jQuery selectors functions to enable dynamic searches throughout ----
-// var forecastContainer = $("#daily-forecast-container");
-// var forecastCards = forecastContainer.children("div");
-
-// var forecastCards = function () {
-//     return $("#daily-forecast-container").children("div");
-// };
-
 var forecastContainer = function () {
     return $("#daily-forecast-container");
 };
@@ -30,10 +28,9 @@ var weatherInfo = function () {
 
 // ----- selector actions -----
 // Dynamically add card styling classes to allow seamless future customization with the 'set attribute' method
-// forecastContainer.children("div").addClass("card-border card-color");
 forecastCards().addClass("card-border card-color");
+// Only displays first 3 daily weather conditions.
 forecastCards().slice(3).hide();
-
 
 // ===== RENDER FORECAST CARD =====
 function renderForecastCard(index) {
@@ -137,15 +134,15 @@ function renderImage(source, index) {
 }
 
 // ===== RENDER HIGH/LOW =====
-function renderHighLow(source, index) {
-    var content = "<h3" + " ";
-    content += "id='high-low-" + index + "'" + " ";
-    content += "class='high-low-property'" + ">";
-    content += source;
-    content += "</h3>";
+function renderHighLow(highSource, lowSource, index) {
+    var content = "<span" + " ";
+    content += "id='" + "high-low-" + index + "'" + " ";
+    content += "class='weather-info'" + ">";
+    // content += "class='weather-info'" + ">";
+    content += highSource + "/" + lowSource;
+    content += "</span>";
 
     return content;
-
 }
 
 // Renders weather property to reduce code redundancy
@@ -158,17 +155,6 @@ function weatherProperty(idName, weatherPropertyName, source, index) {
     content += weatherPropertyName + ":" + "</span>" + " ";
     content += source;
     content += "</p>";
-
-    return content;
-}
-
-function renderHighLow(highSource, lowSource, index) {
-    var content = "<span" + " ";
-    content += "id='" + "high-low-" + index + "'" + " ";
-    content += "class='weather-info'" + ">";
-    // content += "class='weather-info'" + ">";
-    content += highSource + "/" + lowSource;
-    content += "</span>";
 
     return content;
 }
@@ -202,8 +188,9 @@ function resetWeatherCards() {
 
 
 // ===== RETRIEVE WEATHER ===== * default coordinates set to San Antonio, TX
-// function getWeather(latitude = "29.4241",longitude = "-98.4936") {
-function getWeather(latitude = "48.864716",longitude = "2.349014") {
+function getWeather(latitude = defaultLocation[0],longitude = defaultLocation[1]) {
+// Location set for france
+// function getWeather(latitude = "48.864716", longitude = "2.349014") {
     var darSkyApi = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/";
     var weather = $.get(darSkyApi + darkSkyKey + "/" + latitude + "," + longitude + "?units=auto");
 //     function getWeather() {
@@ -217,24 +204,6 @@ function getWeather(latitude = "48.864716",longitude = "2.349014") {
         var nextDailyWind = [];
         var nextDailyPressure = [];
         var nextDailySummary = [];
-
-
-        // // NOTE: Render each image and push to daily images based on the icon
-        // for (var i = 1; i < forecastCards().length; i++) {
-        //     nextDailyImages.push(renderImage(weatherIcon(data.daily.data[i].icon), i));
-        //     nextDailyHumidity.push(renderHumidity((data.daily.data[i].humidity * 100), i));
-        //     nextDailyWind.push(renderWind((data.daily.data[i].windSpeed), i));
-        //     nextDailyPressure.push(renderPressure(data.daily.data[i].pressure, i));
-        //     nextDailySummary.push(renderSummary("<br>" + data.daily.data[i].summary, i));
-        // }
-        // // NOTE: Update each weather card with appropriate data
-        // $("#daily-forecast-container .weather-card").slice(1).each(function (index) {
-        //     $(this).append(nextDailyImages[index]);
-        //     $(this).append(nextDailyHumidity[index]);
-        //     $(this).append(nextDailyWind[index]);
-        //     $(this).append(nextDailyPressure[index]);
-        //     $(this).append(nextDailySummary[index]);
-        // });
 
         for (var i = 0; i < forecastCards().length; i++) {
             if (i === 0) {
@@ -268,6 +237,7 @@ function getWeather(latitude = "48.864716",longitude = "2.349014") {
 getWeather();
 // getWeather("48.864716","2.349014");
 
+// ===== WEEKLY FORECAST BUTTON =====
 $("#forecast-button").click(function () {
     $(this).toggleClass("forecast-button-style");
     if ($(this).hasClass("forecast-button-style")) {
@@ -278,18 +248,6 @@ $("#forecast-button").click(function () {
         forecastCards().slice(3).hide();
     }
 });
-
-mapboxgl.accessToken = mapboxToken;
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 1,
-    center: [-95.7129, 37.0902],
-    hash: true
-});
-
-map.addControl(new mapboxgl.NavigationControl());
-map.scrollZoom.disable();
 
 // ===== CURRENT LOCATION BUTTON CLICKED =====
 function getLocation() {
@@ -302,14 +260,56 @@ function getLocation() {
 
 function showPosition(position) {
     var currentLatLong = {
-        "latitude" : position.coords.latitude,
-        "longitude" : position.coords.longitude
+        "latitude": position.coords.latitude,
+        "longitude": position.coords.longitude
     };
+
     resetWeatherCards();
-    getWeather(currentLatLong.latitude,currentLatLong.longitude);
+    getWeather(currentLatLong.latitude, currentLatLong.longitude);
+    currentLocation = [];
+    currentLocation.push(currentLatLong.latitude,currentLatLong.longitude);
+    console.log(currentLocation);
 }
 
 $("#current-location").click(function () {
     getLocation();
 });
+
+// ==== MAP-BOX ====
+// ***** NOTE: map-box coordinates are entered long, lat. Refer to location variable format at the top to manipulate map-box data
+// ----- setup map container
+mapboxgl.accessToken = mapboxToken;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 1,
+    // United States
+    center: [-95.7129, 37.0902]
+});
+
+// add/remove specific features
+map.addControl(new mapboxgl.NavigationControl());
+map.scrollZoom.disable();
+
+// ----- map-box marker -----
+var marker = new mapboxgl.Marker({
+    draggable: true
+})
+    .setLngLat([defaultLocation[1], defaultLocation[0]])
+    .addTo(map);
+
+function onDragEnd() {
+    var lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+
+    // Possible un-needed code snippet
+    draggedLocation = [];
+    draggedLocation.push(lngLat.lng,lngLat.lat);
+
+    resetWeatherCards();
+    getWeather(lngLat.lat, lngLat.lng);
+}
+
+marker.on('dragend', onDragEnd);
 // });
