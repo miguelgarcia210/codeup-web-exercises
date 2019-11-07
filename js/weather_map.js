@@ -1,93 +1,231 @@
 // (function (){
 "use strict";
-// Check if browser supports .svg format
-var weatherIconFormat = "";
-var weatherIconDirectory = "";
 
-if (Modernizr.svg) {
-    weatherIconFormat = ".svg";
-    weatherIconDirectory = "img/weather_map_icons/svg/";
-    console.log("Hurray!");
-} else {
-    weatherIconFormat = ".png";
-    console.log("That sucks");
+// ===== SELECTOR VARIABLES =====
+//      ---- jQuery selectors functions to enable dynamic searches throughout ----
+// var forecastContainer = $("#daily-forecast-container");
+// var forecastCards = forecastContainer.children("div");
+
+// var forecastCards = function () {
+//     return $("#daily-forecast-container").children("div");
+// };
+
+var forecastContainer = function () {
+    return $("#daily-forecast-container");
+};
+
+var forecastCards = function () {
+    return forecastContainer().children("div");
+};
+
+var weatherInfo = function () {
+    var weatherInfoTags = $("#daily-forecast-container").children("div").children("p");
+    if (weatherInfoTags.length === 0) {
+        return "weatherInfo() returned nothing";
+    } else {
+        return weatherInfoTags;
+    }
+};
+console.log(weatherInfo());
+
+// ----- selector actions -----
+// Dynamically add card styling classes to allow seamless future customization with the 'set attribute' method
+// forecastContainer.children("div").addClass("card-border card-color");
+forecastCards().addClass("card-border card-color");
+
+
+// ===== RENDER FORECAST CARD =====
+function renderForecastCard(forecast, index) {
+    var content = "<div" + " ";
+    content += "id='forecast-card-'" + index + "'" + " ";
+    content += "class='weather-card" + ">";
+    content += forecast;
+    content += "</div>";
+
+    return content;
 }
 
-var forecastContainer = $("#forecast-container");
+// ===== .svg FEATURE CHECK =====
+function checkImageFeature() {
+    var svgStatus = false;
 
+    if (Modernizr.svg) {
+        svgStatus = true;
+    }
+    return svgStatus;
+}
 
-// Dynamically add card styling classes to allow seamless future customization with the 'set attribute' method
-forecastContainer.children("div").addClass("card-border card-color");
+var svgSupport = checkImageFeature();
 
-// OBTAIN CURRENT WEATHER CONDITION
-function currentWeatherIcon(x) {
+// ===== SET WEATHER ICON =====
+function weatherIcon(condition) {
     var icon = "";
-    switch (x.currently.icon) {
+    var weatherIconFormat = "";
+    var weatherIconDirectory = "";
+
+    if (svgSupport) {
+        weatherIconFormat = ".svg";
+        weatherIconDirectory = "img/weather_map_icons/svg/";
+        // console.log("svg format enabled");
+    } else {
+        weatherIconDirectory = "img/weather_map_icons/png/";
+        weatherIconFormat = ".png";
+        // console.log("png format enabled");
+    }
+
+    switch (condition) {
         case "clear-day":
-            icon =
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "015-sunny" + weatherIconFormat;
             break;
         case "clear-night":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "016-moon" + weatherIconFormat;
             break;
         case "rain":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "010-rain" + weatherIconFormat;
             break;
         case "snow":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "009-snowfall" + weatherIconFormat;
             break;
         case "sleet":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "011-sleet" + weatherIconFormat;
             break;
         case "wind":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "031-wind" + weatherIconFormat;
             break;
         case "fog":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "046-volcano" + weatherIconFormat;
             break;
         case "cloudy":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "008-cloudy" + weatherIconFormat;
             break;
         case "partly-cloudy-day":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "001-cloudy" + weatherIconFormat;
             break;
         case "partly-cloudy-night":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "014-cloudy" + weatherIconFormat;
             break;
         case "hail":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "013-hail" + weatherIconFormat;
             break;
         case "thunderstorm":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "049-thunder" + weatherIconFormat;
             break;
         case "tornado":
-            // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "042-tornado" + weatherIconFormat;
             break;
         default:
-        // icon = "img/weather_map_icons";
+            icon = weatherIconDirectory + "022-weather forecast" + weatherIconFormat;
     }
     return icon;
 }
 
-// OBTAIN DAILY WEATHER CONDITIONS
-function dailyWeatherIcon(x) {
+// ===== RENDER WEATHER IMAGE =====
+function renderImage(source, index) {
+    var content = "<img" + " ";
+    content += "id=" + "'image-icon-" + index + "'" + " ";
+    content += "src='";
+    content += source;
+    content += "'" + " ";
+    content += "alt='";
+    content += source;
+    content += "'" + " ";
+    content += "class='weather-image'";
+    content += ">";
+
+    return content;
+}
+
+// ===== RENDER HIGH/LOW =====
+function renderHighLow(source, index) {
+    var content = "<h3" + " ";
+    content += "id='high-low-" + index + "'" + " ";
+    content += "class='high-low-property'" + ">";
+    content += source;
+    content += "</h3>";
+
+    return content;
 
 }
 
-// RENDER BASIC WEATHER PROPERTIES
-function renderBasicWeather(x) {
-    var content = "<img ";
+// Renders weather property to reduce code redundancy
+function weatherProperty(idName, weatherPropertyName, source, index) {
+    var content = "<p" + " ";
+    content += "id='" + idName + "-" + index + "'" + " ";
+    content += "class='weather-info'" + ">";
+    content += "<span" + " ";
+    content += "class='weather-property'" + ">";
+    content += weatherPropertyName + ":" + "</span>" + " ";
+    content += source;
+    content += "</p>";
+
+    return content;
+}
+
+// ===== RENDER HUMIDITY =====
+function renderHumidity (source, index) {
+    return weatherProperty("humidity","Humidity",source,index);
+}
+
+// ===== RENDER WIND =====
+function renderWind (source, index) {
+    return weatherProperty("wind","Wind",source,index);
+}
+
+// ===== RENDER PRESSURE =====
+function renderPressure (source, index) {
+    return weatherProperty("pressure","Pressure",source,index);
+}
+
+// ===== RENDER SUMMARY =====
+function renderSummary (source, index) {
+    return weatherProperty("summary", "Details",source,index);
 }
 
 function getWeather() {
-    var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936");
+    var weather = $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/29.4241,-98.4936" + "?units=auto");
     weather.done(function (data) {
-        console.log(data);
-        console.log(data.currently.icon);
+        // TODO: update current weather card
+
+        // ===== Update daily weather cards EXCEPT current =====
+
+        // NOTE: Arrays for daily weather information
+        var nextDailyImages = [];
+        var nextDailyHighLow = [];
+        var nextDailyHumidity = [];
+        var nextDailyWind = [];
+        var nextDailyPressure = [];
+        var nextDailySummary = [];
+
+
+        // NOTE: Render each image and push to daily images based on the icon
+        // for (var i = 1; i < forecastCards.length; i++) {
+        for (var i = 1; i < forecastCards().length; i++) {
+            nextDailyImages.push(renderImage(weatherIcon(data.daily.data[i].icon), i));
+            nextDailyHumidity.push(renderHumidity((data.daily.data[i].humidity * 100), i));
+            nextDailyWind.push(renderWind((data.daily.data[i].windSpeed), i));
+            nextDailyPressure.push(renderPressure(data.daily.data[i].pressure,i));
+            nextDailySummary.push(renderSummary("<br>" + data.daily.data[i].summary,i));
+        }
+        // NOTE: Update each weather card with appropriate data
+        $("#daily-forecast-container .weather-card").slice(1).each(function (index) {
+            $(this).append(nextDailyImages[index]);
+            $(this).append(nextDailyHumidity[index]);
+            $(this).append(nextDailyWind[index]);
+            $(this).append(nextDailyPressure[index]);
+            $(this).append(nextDailySummary[index]);
+        });
+
+        console.log(weatherInfo());
+        // console.log(nextDailyWind);
+        // console.log(nextDailyPressure);
+        // console.log(nextDailyImages);
+        // console.log(nextDailyHumidity);
+        // console.log(data);
 
     })
+
 }
 
-// getWeather();
+getWeather();
 
 // });
