@@ -414,3 +414,29 @@ function randBool() {
 }
 
 console.log(randBool());
+
+//GROUP MORNING WARMUP
+/*
+1. walk into kitchen
+2. Open the cabinet
+3. retrieve the bread
+4. place onto counter
+5. retrieve the peanut butter
+6. place onto counter
+7. close cabinet
+1. open the fridge
+2. retrieve the jelly
+3. close the fridge
+4. place onto counter
+5. open drawer
+6. grab butter knife
+7. close drawer
+8. set down knife onto counter
+9. open cabinet
+10. grab plate
+11. set down plate onto counter
+12. close cabinet
+9. untwist twistie on bread bag
+10. stick hand inside bag
+11. skip the first bread
+ */
