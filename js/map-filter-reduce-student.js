@@ -21,7 +21,7 @@ console.log(newNewArray);
 /*********************************************
  *              .filter
  ******************************************** */
-const binary = [1,1,1,1,0,0,1,1,1,1];
+const binary = [1, 1, 1, 1, 0, 0, 1, 1, 1, 1];
 
 // TODO: TOGETHER: Let's filter through our binary and return all the true
 //  values. We'll store the new array in a variable named 'ones'
@@ -73,11 +73,38 @@ console.log(vegetableTypes);
  *              .reduce
  ******************************************** */
 
-// TO DO TOGETHER: Let's reduce our original numbers Array into one single
-// value.
+const numbersLec = [1, 2, 3, 4, 5];
 
-// TO DO: Using .reduce, subtract all numbers in the numbers Array from a
-// starting point of 100.
+const sumLec = numbersLec.reduce((accumulation, currentNumber) => {
+    return accumulation + currentNumber;
+}, 0);
+
+// accumulation = 0
+// add 1
+// accumulation = 1
+// add 2
+// accumulation = 3
+// add 3
+// accumulation = 6
+// add 4
+// accumulation = 10
+// add 5
+// accumulation = 15
+
+
+// TODO TOGETHER: Let's reduce our original numbers Array into one single value.
+let sum = numbers.reduce((total, number) => {
+    return total + number
+}, 0);
+
+console.log(sum);
+
+// TODO: Using .reduce, subtract all numbers in the numbers Array from a starting point of 100.
+let subtracted = numbers.reduce((total, number) => {
+   return total - number;
+}, 100);
+
+console.log(subtracted);
 
 var shoppingCarts = [
     {
@@ -90,12 +117,12 @@ var shoppingCarts = [
         bananas: 6,
         oranges: 8,
         grapes: 12
-    } , {
+    }, {
         apples: 0,
         bananas: 12,
         oranges: 0,
         grapes: 0
-    } , {
+    }, {
         apples: 4,
         bananas: 0,
         oranges: 12,
@@ -103,23 +130,42 @@ var shoppingCarts = [
     }
 ];
 
-// TO DO: Using .reduce, return the total number of apples.
+// TODO: Using .reduce, return the total number of apples.
+const apples = shoppingCarts.reduce((total, cart) => {
+   return total +  cart.apples
+}, 0);
+console.log(apples);
 
-// TO DO TOGETHER: let's use .reduce to return an object that has properties
-// representing total values for each fruit.
+// TODO TOGETHER: let's use .reduce to return an object that has properties
+//  representing total values for each fruit.
+const fruitTotals = shoppingCarts.reduce((total, cart) => {
 
-const colors = ['red','orange','red','blue','blue','green','red'];
+}, {});
 
-// TO DO: Count the number of times a color appears in this Array. Hint:
-// your initial value should be an empty object.
+const colors = ['red', 'orange', 'red', 'blue', 'blue', 'green', 'red'];
 
-const lyrics = ['we','all','live','in','a','yellow','submarine'];
+// TODO: Count the number of times a color appears in this Array.
+//  Hint: your initial value should be an empty object.
+const colorCount = colors.reduce((colorCount, color) => {
+    if (typeof colorCount[color] === "undefined") {
+        colorCount[color] = 1;
+    } else {
+        colorCount[color] += 1;
+    }
 
-//TO DO TOGETHER: Using reduce, let's turn this into a string.
-// const oneLine =
-// console.log(oneLine);
+    return colorCount;
+}, {});
+console.log(colorCount);
 
-// Bonus: Create an Array of all the unique fur colors!
+const lyrics = ['we', 'all', 'live', 'in', 'a', 'yellow', 'submarine'];
+
+//TODO TOGETHER: Using reduce, let's turn this into a string.
+const oneLine = lyrics.reduce((currentString, word) => {
+    return `${currentString} ${word}`
+}, "");
+console.log(oneLine);
+
+// TODO: Bonus: Create an Array of all the unique fur colors!
 var hamsters = [
     {
         name: "Hamtaro",
@@ -127,25 +173,25 @@ var hamsters = [
         fur: ['orange', 'white'],
         gender: "male",
         dateOfBirth: "August 6"
-    } , {
+    }, {
         name: "Bijou",
         heightInMM: 75,
         fur: ['white'],
         gender: "female",
         dateOfBirth: "July 10"
-    } , {
+    }, {
         name: "Oxnard",
         heightInMM: 100,
         fur: ['grey', 'white'],
         gender: "male",
         dateOfBirth: "May 3"
-    } , {
+    }, {
         name: "Boss",
         heightInMM: 120,
         fur: ['brown', 'white'],
         gender: "male",
         dateOfBirth: "Spetember 21"
-    } , {
+    }, {
         name: "Snoozer",
         heightInMM: 85,
         fur: ['brown', 'white', "pink"],
@@ -153,4 +199,11 @@ var hamsters = [
         dateOfBirth: "January 14"
     }
 ];
+
+// var uniqueItems = [...new Set(items)]
+const uniqueFurColors = hamsters.filter((uniqueColors, hamster) => {
+
+}, []);
+
+console.log(uniqueFurColors);
 
