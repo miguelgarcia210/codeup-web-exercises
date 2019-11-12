@@ -6,12 +6,17 @@
 
 const numbers = [1,2,3,4,5,6,7,8,9,10];
 
-//TO DO TOGETHER: Let's map through the array of number and add 1 to each
+//TODO: TOGETHER: Let's map through the array of number and add 1 to each
 // element. Console log the new copy of the array.
 
-//TO DO: Map through the new array of numbers and this time multiply each
+let newArray = numbers.map(num => num + 1);
+console.log(newArray);
+
+//TODO: Map through the new array of numbers and this time multiply each
 // element by 3. Console log the new copy.
 
+let newNewArray = newArray.map(num => num * 3);
+console.log(newNewArray);
 
 /*********************************************
  *              .filter
