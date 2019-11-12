@@ -23,11 +23,15 @@ console.log(newNewArray);
  ******************************************** */
 const binary = [1,1,1,1,0,0,1,1,1,1];
 
-// TO DO TOGETHER: Let's filter through our binary and return all the true
-// values. We'll store the new array in a variable named 'ones'
+// TODO: TOGETHER: Let's filter through our binary and return all the true
+//  values. We'll store the new array in a variable named 'ones'
 
-// TO DO: filter through binary again and this time, return all the false
-// values.
+let ones = binary.filter(num => num == true);
+console.log(ones);
+
+// TODO: filter through binary again and this time, return all the false values.
+let zeros = binary.filter(num => num == false);
+console.log(zeros);
 
 const fruitsAndVeggies = [
     {
@@ -57,11 +61,13 @@ const fruitsAndVeggies = [
 ];
 
 
-// TO DO: filter through the array of objects and return all fruit type
-// objects.
+// TODO: filter through the array of objects and return all fruit type objects.
+let fruitTypes = fruitsAndVeggies.filter(produce => produce.type === "fruit");
+console.log(fruitTypes);
 
-// TO DO: filter through the array of objects and return all vegetable type
-// objects.
+// TODO: filter through the array of objects and return all vegetable type objects.
+let vegetableTypes = fruitsAndVeggies.filter(produce => produce.type === "vegetable");
+console.log(vegetableTypes);
 
 /*********************************************
  *              .reduce
