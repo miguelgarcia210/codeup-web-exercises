@@ -186,7 +186,6 @@ function resetWeatherCards() {
     });
 }
 
-
 // ===== RETRIEVE WEATHER ===== * default coordinates set to San Antonio, TX
 function getWeather(latitude = defaultLocation[0],longitude = defaultLocation[1]) {
 // Location set for france
@@ -265,6 +264,16 @@ function showPosition(position) {
     };
 
     resetWeatherCards();
+
+    // Fly to current location
+    map.flyTo({
+        center: [currentLatLong.longitude, currentLatLong.latitude],
+        zoom: 15
+    });
+
+    // Reposition marker to current location
+    marker.setLngLat([currentLatLong.longitude, currentLatLong.latitude]);
+
     getWeather(currentLatLong.latitude, currentLatLong.longitude);
     currentLocation = [];
     currentLocation.push(currentLatLong.latitude,currentLatLong.longitude);
@@ -308,8 +317,40 @@ function onDragEnd() {
     draggedLocation.push(lngLat.lng,lngLat.lat);
 
     resetWeatherCards();
+    // Fly to marker location when repositioned
+    map.flyTo({
+        center: [lngLat.lng,lngLat.lat],
+        zoom: 7
+    });
+    // Initiate getWeather function for marker positioned location
     getWeather(lngLat.lat, lngLat.lng);
 }
 
 marker.on('dragend', onDragEnd);
+
+// - Adds geocoder input to the map
+// map.addControl(new MapboxGeocoder({
+//     accessToken: mapboxgl.accessToken,
+//     mapboxgl: mapboxgl
+// }));
+
+
+// Add geocoder to div
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: false
+});
+// document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+$("#geocoder").append(geocoder.onAdd(map));
+
+geocoder.on('result', function (result) {
+    var longitude = result.result.center[0];
+    var latitude = result.result.center[1];
+    marker.setLngLat([longitude, latitude]);
+
+    resetWeatherCards();
+    getWeather(latitude, longitude);
+    console.log(result);
+});
 // });

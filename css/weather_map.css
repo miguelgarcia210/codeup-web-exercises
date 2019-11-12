@@ -139,3 +139,30 @@ body {
     border-radius: 3px;
     display: none;
 }
+
+.geocoder {
+    /*position:absolute;*/
+    z-index:1;
+    border: 1px solid red;
+    border-radius: 5px;
+    /*height: 48px;*/
+
+    /*width:50%;*/
+
+    /*left:50%;*/
+    /*margin-left:-25%;*/
+    /*top:20px;*/
+}
+
+.mapboxgl-ctrl-geocoder {
+    min-width:100%;
+    font-size: 14px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+    height: 48px;
+}
+
+.mapboxgl-ctrl-geocoder--icon {
+    top: 13px;
+}
