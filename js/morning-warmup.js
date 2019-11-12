@@ -440,3 +440,17 @@ console.log(randBool());
 10. stick hand inside bag
 11. skip the first bread
  */
+
+// Given this array: [1, 2, 3, 4, 5, 6, 7, 8]
+// Write a loop that returns all the even numbers
+
+var poptartArray = [1, 2, 3, 4, 5, 6, 7, 8];
+var answerArray = [];
+
+poptartArray.forEach(function (num) {
+    if (num % 2 === 0) {
+        answerArray.push(num)
+    }
+});
+
+console.log(answerArray);
