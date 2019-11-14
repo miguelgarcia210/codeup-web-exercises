@@ -454,3 +454,15 @@ poptartArray.forEach(function (num) {
 });
 
 console.log(answerArray);
+
+// Write a function that returns a promise. The promise should resolve if the function takes in an even number, and reject if passed anything else.
+
+const evenNum = num => new Promise ((resolve, reject) => {
+    if (num % 2 === 0) {
+        resolve("Even number");
+    } else {
+        reject("Not an even number");
+    }
+});
+
+console.log(evenNum(2));
