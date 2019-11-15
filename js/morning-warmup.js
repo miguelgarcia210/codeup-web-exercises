@@ -466,3 +466,22 @@ const evenNum = num => new Promise ((resolve, reject) => {
 });
 
 console.log(evenNum(2));
+
+// Write a function that returns a promise. It should resolve with a message of "Hello." Write to the HTML document an H1 that has the text of the resolve.
+
+const Hello = () => new Promise((resolve, reject) => {
+    resolve($("body").html(`<h1>Hello</h1>`));
+});
+
+Hello();
+
+// In class demonstration
+const helloPromise = () => {
+    return new Promise ((resolve) => {
+        resolve("Test");
+    })
+};
+
+helloPromise().then(message => {
+    $("body").append(`<h2>${message}</h2>`)
+});
