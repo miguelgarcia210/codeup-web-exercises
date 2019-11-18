@@ -485,3 +485,11 @@ const helloPromise = () => {
 helloPromise().then(message => {
     $("body").append(`<h2>${message}</h2>`)
 });
+
+// Write a function that returns Pi() to 6 decimal places as a number
+
+const sayPi = () => {
+  return parseFloat((Math.PI).toFixed(6));
+};
+
+console.log(sayPi());
