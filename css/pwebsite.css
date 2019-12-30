@@ -21,7 +21,7 @@ body {
     width: 100%;
 }
 
-/* === NAV MENU ICON === */
+/* === NAV LIST === */
 .nav-list {
     list-style: none;
     height: 48px;
@@ -34,33 +34,55 @@ body {
     position: relative;
 }
 
-#nav-icon-list-item {
-    margin-right: auto;
+/* === NAV MENU ICON === */
+.menu-icon {
+    position: absolute;
+    height: 48px;
+    width: 48px;
+    z-index: 2;
+    border: 1px solid red;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav-icon {
-    margin-left: 1em;
-    width: 17px;
+.menu-icon-container {
+    position: absolute;
+    z-index: 3;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
 }
 
-.nav-icon:before,
-.nav-icon div {
-    background-color: #FFFFFF;
-    border-radius: 0.5px;
-    content: '';
+.menu-icon-bread-crust {
     display: block;
+    position: absolute;
+    width: 17px;
     height: 1px;
-    margin: 7px 0;
-    transition: all .2s ease-in-out;
-}
-/* TODO: update transition */
-.nav-icon:hover:before {
-    transform: translateY(7px) rotate(45deg);
+    border-radius: 0.5px;
+    background: #ffffff;
+    z-index: 1;
 }
 
-.nav-icon:hover div {
-    transform: translateY(-7px) rotate(-45deg);
+.menu-icon-bread-top {
+    top: 10px;
 }
+
+.menu-icon-bread-bottom {
+    bottom: 10px;
+}
+
+/*.menu-icon-bread-crust-top {*/
+/*    top: 14px;*/
+/*    transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;*/
+/*}*/
+
+/*.menu-icon-bread-crust-bottom {*/
+/*    bottom: 14px;*/
+/*    transition: transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s, -webkit-transform .1596s cubic-bezier(0.52, 0.16, 0.52, 0.84) .1008s;*/
+/*}*/
 
 /* --- NAV LOGO --- */
 #nav-logo-list-item {
