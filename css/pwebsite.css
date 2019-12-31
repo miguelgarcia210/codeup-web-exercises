@@ -14,15 +14,7 @@ body {
     grid-template-rows: 48px auto 1fr;
 }
 
-main {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-footer {
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-/* === HEADER CONTAINER === */
+/* === HEADER === */
 .header-style {
     height: 48px;
     /*background-color: #323232;*/
@@ -35,7 +27,7 @@ footer {
     border-bottom: 3px solid #04C2C9;
 }
 
-/* === NAV LIST === */
+/* --- NAV LIST --- */
 .nav-list {
     list-style: none;
     height: 48px;
@@ -49,13 +41,13 @@ footer {
     top: 0;
 }
 
-/* === NAV MENU ICON === */
+/* --- NAV MENU ICON --- */
 .menu-icon {
     position: absolute;
     height: 48px;
     width: 48px;
     z-index: 2;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     left: 0;
     display: flex;
     justify-content: center;
@@ -109,7 +101,11 @@ footer {
     width: 18px;
 }
 
-/* --- CONTENT --- */
+/* === MAIN === */
+main {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
 .home-splash {
     display: flex;
     height: 621px;
@@ -145,4 +141,45 @@ footer {
 .home-splash-button:hover {
     background: #04C2C9;
     border-color: #04C2C9;
+}
+
+/* === FOOTER === */
+footer {
+    grid-area: 3 / 1 / 4 / 2;
+    background: #252934;
+    min-height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: auto;
+}
+
+footer h3 {
+    margin-bottom: 0;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.f-menu-list {
+    list-style: none;
+    padding: 0;
+    line-height: 16pt;
+}
+
+.footer-network {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    grid-area: 1 / 3 / 2 / 4;
+
+}
+
+.f-network-list {
+    list-style: none;
+    padding: 0;
+    line-height: 16pt;
 }
