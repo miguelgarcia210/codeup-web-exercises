@@ -8,7 +8,6 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
     font-size: 8pt;
-    /*text-align: center;*/
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 48px auto 1fr;
@@ -106,6 +105,42 @@ main {
     grid-area: 2 / 1 / 3 / 2;
 }
 
+.content-title h1 {
+    margin-bottom: 0;
+}
+
+.content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-title h1 {
+    font-size: 2.5em;
+}
+
+.title-bar {
+    height: 2px;
+    width: 50px;
+    background: #04C2C9;
+    border-radius: 25px;
+}
+
+.card {
+    border-radius: 1em;
+    width: 95%;
+    min-height: 15em;
+    margin: 1em auto 0;
+    padding: 0 1.5em;
+    border: 1px solid red;
+    /*background: lightgray;*/
+}
+
+.card-content {
+    padding-bottom: 1em;
+}
+
+/* --- SPLASH SCREEN SECTION --- */
 .home-splash {
     display: flex;
     height: 621px;
@@ -141,6 +176,67 @@ main {
 .home-splash-button:hover {
     background: #04C2C9;
     border-color: #04C2C9;
+}
+
+/* --- ABOUT SECTION --- */
+
+/* --- PORTFOLIO SECTION --- */
+
+/* --- SKILLS & TOOLS SECTION --- */
+.language-logo {
+    height: 70px;
+    width: 70px;
+}
+
+.language-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 1em;
+    justify-items: center;
+    align-content: center;
+}
+
+.language-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*border: 1px solid grey;*/
+    border-radius: 0.5em;
+    padding: 0.5em;
+    background: #FFFFFF;
+    box-shadow: 0.5em 0.5em 0.5em dimgrey;
+    /*box-shadow: -10px 0px 10px 1px dimgrey;*/
+}
+
+.language-list li span {
+    box-shadow: 0 4px 2px -2px grey;
+}
+
+.language-text {
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 0.75em;
+}
+
+/* --- SEPARATOR --- */
+.separator-container {
+    display: block;
+    background: #252934;
+}
+
+/* --- CONTACT --- */
+.home-contact {
+    background: #252934;
+}
+
+.home-contact div h1 {
+    color: #FFFFFF;
 }
 
 /* === FOOTER === */
@@ -219,13 +315,9 @@ footer h3 {
     color: #E1236E;
 }
 
-/*.separator-container {*/
-/*    background: black;*/
-/*}*/
-svg {
-    background: #00CD00;
-}
-.svg-container {
-    preserveAspectRatio: "none";
-
+.test1 {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
