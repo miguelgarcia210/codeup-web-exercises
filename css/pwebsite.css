@@ -121,7 +121,7 @@ main {
 .card {
     border-radius: 1em;
     width: 95%;
-    min-height: 15em;
+    min-height: 10em;
     margin: 0 auto;
     padding: 0 1.5em;
     /*border: 1px solid red;*/
@@ -213,6 +213,17 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.about-intro-p {
+    background: #F5F5F5;
+    /*border: 1px solid red;*/
+    border-radius: 1em;
+    margin: 0;
+    font-size: 10pt;
+    padding: 0 0.5em;
+    text-align: center;
+    font-weight: normal;
 }
 
 /* --- PORTFOLIO SECTION --- */
