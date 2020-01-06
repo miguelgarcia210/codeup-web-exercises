@@ -226,6 +226,50 @@ main {
     font-weight: normal;
 }
 
+.developmental-pillars {
+    display: grid;
+    grid-template-rows: auto;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.pillar {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 3fr 7em;
+    grid-column-gap: 1.5em;
+    margin: 1em 0;
+}
+
+.pillar-card {
+    font-size: 10pt;
+    background: #F5F5F5;
+    border-radius: 1em;
+    text-align: center;
+    padding: 0 0.5em;
+}
+
+.pillar-icon {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pillar:nth-of-type(even) {
+    grid-template-columns: 7em 3fr;
+}
+.pillar-icon:nth-of-type(even) {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.pillar-icon img {
+    width: 70px;
+    height: 70px;
+}
+
 /* --- PORTFOLIO SECTION --- */
 .home-portfolio {
     display: flex;
@@ -299,8 +343,16 @@ img[alt="git logo"] {
 
 /* --- SEPARATOR --- */
 .separator-container {
-    display: block;
     background: #252934;
+    height: 75px;
+    width: 100%;
+    position: relative;
+}
+
+.separator-container svg {
+    display: block;
+    position: absolute;
+    top: -1px;
 }
 
 /* --- CONTACT --- */
