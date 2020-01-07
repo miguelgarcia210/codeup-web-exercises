@@ -242,6 +242,14 @@ main {
     margin: 1em 0;
 }
 
+.pillar-invert {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 7em 3fr;
+    grid-column-gap: 1.5em;
+    margin: 1em 0;
+}
+
 .pillar-card {
     font-size: 10pt;
     background: #F5F5F5;
@@ -258,10 +266,7 @@ main {
     align-items: center;
 }
 
-.pillar:nth-of-type(even) {
-    grid-template-columns: 7em 3fr;
-}
-.pillar-icon:nth-of-type(even) {
+.pillar-invert .pillar-icon {
     grid-area: 1 / 1 / 2 / 2;
 }
 
