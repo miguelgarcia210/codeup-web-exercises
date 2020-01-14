@@ -113,7 +113,8 @@ $("#card-button").click(function (event) {
        $(this).html("Hide Photo Wall");
    } else {
        $("#photo-collage-container").children("div").html("");
-       $(this).html("Show Photo Wall");
+       // $(this).html("Show Photo Wall");
+
    }
 });
 

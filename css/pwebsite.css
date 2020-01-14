@@ -291,22 +291,30 @@ main {
 }
 
 .pillar-icon img {
+    display: none;
     position: absolute;
     width: 70px;
     height: 70px;
     animation-name: fly-up-away;
-    animation-delay: 5s;
-    animation-duration: 10s;
+    /*animation-delay: 5s;*/
+    animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
+.active:nth-child(1) {
+    display: block;
+}
+/*.pillar-icon img.active {*/
+/*    display: block;*/
+/*}*/
+
 @keyframes fly-up-away {
-    from {
-        transform: translate3d(0, 0, 0);
-        animation-timing-function: ease-in;
-    }
-    to {
+    50%, 100% {
         transform: translate3d(0, -8em, 0);
+
+    }
+    0%, 40%{
+        transform: translate3d(0, 0, 0);
     }
 }
 
