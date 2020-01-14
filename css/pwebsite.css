@@ -230,10 +230,11 @@ main {
     display: grid;
     grid-template-rows: auto;
     width: 95%;
-    margin: 0 auto;
     padding: 0 1.5em;
+    margin: 2em auto 0;
 }
 
+/* Pillar Containers */
 .pillar {
     display: grid;
     grid-template-rows: 100%;
@@ -250,17 +251,36 @@ main {
     margin: 1em 0;
 }
 
+.pillar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
+}
+
+/* pillar content styles */
 .pillar-card {
     font-size: 10pt;
     background: #F5F5F5;
     border-radius: 1em;
     text-align: center;
-    padding: 0 0.5em;
+    padding: 0.5em 0.5em;
+    margin: 0;
+    min-height: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+/* pillar icon placements + styles */
 .pillar-icon {
     grid-area: 1 / 2 / 2 / 3;
     display: flex;
+    /* allows for .pillar-icon img to be absolute within containing div rather than
+        taken out of the flow of the document */
+    position: relative;
+    /* allows the container to hide any content within that goes beyond y-axis */
+    overflow-y: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -271,8 +291,23 @@ main {
 }
 
 .pillar-icon img {
+    position: absolute;
     width: 70px;
     height: 70px;
+    animation-name: fly-up-away;
+    animation-delay: 5s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fly-up-away {
+    from {
+        transform: translate3d(0, 0, 0);
+        animation-timing-function: ease-in;
+    }
+    to {
+        transform: translate3d(0, -8em, 0);
+    }
 }
 
 /* --- PORTFOLIO SECTION --- */
