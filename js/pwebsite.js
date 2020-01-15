@@ -13,16 +13,21 @@ function swapImages() {
     //     $('.pillar-icon img:nth-child(2)').removeClass('active').addClass('non-active').hide();
     // }
     if (firstImg.hasClass('active')) {
-        firstImg.removeClass("active").addClass("non-active").hide();
-        secondImg.fadeIn(3000).removeClass("non-active").addClass("active").show();
+        secondImg.show().fadeIn(2000).removeClass("non-active").addClass("active");
+        firstImg.hide().removeClass("active").addClass("non-active");
+        // firstImg.removeClass("active").addClass("non-active").hide();
+        // secondImg.fadeIn(2000).removeClass("non-active").addClass("active").show();
     } else {
-        firstImg.fadeIn(3000).removeClass('non-active').addClass('active').show();
-        secondImg.removeClass('active').addClass('non-active').hide();
+        firstImg.show().fadeIn(2000).removeClass('non-active').addClass('active');
+        secondImg.hide().removeClass('active').addClass('non-active');
+        // firstImg.fadeIn(2000).removeClass('non-active').addClass('active').show();
+        // secondImg.removeClass('active').addClass('non-active').hide();
+        firstImg.fadeTo('fast',1).fadeIn(2000).removeClass('non-active').addClass('active');
     }
 }
 
 
 $(document).ready(function () {
-    setInterval('swapImages()', 8000);
+    setInterval('swapImages', 8000);
 });
 // }) ();
