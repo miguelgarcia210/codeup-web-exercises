@@ -175,7 +175,7 @@ main {
 /* --- SPLASH SCREEN SECTION --- */
 .home-splash {
     display: flex;
-    height: 621px;
+    height: calc(100vh - 48px);
     justify-content: center;
     align-items: center;
     background: #252934;
@@ -183,12 +183,12 @@ main {
     line-height: 11pt;
 }
 
-canvas {
-    position: absolute;
-    /*z-index: -1;*/
-    /*display: block;*/
-    vertical-align: bottom;
-}
+/*canvas {*/
+/*    position: absolute;*/
+/*    !*z-index: -1;*!*/
+/*    !*display: block;*!*/
+/*    vertical-align: bottom;*/
+/*}*/
 
 .home-splash-intro {
     color: #ffffff;
@@ -345,6 +345,43 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.portfolio-container {
+    border: 1px solid green;
+    width: 95%;
+    height: auto;
+    display: grid;
+    padding: 0 1.5em;
+    margin-top: 1em;
+}
+
+.portfolio-projects {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1em;
+}
+
+/* --- remove scroll bar display ONLY for forecast-container --- */
+.portfolio-projects::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    border: 1px solid black;
+    height: 30em;
+    width: 95%;
+    background-color: green;
+    border-radius: 1em;
+}
+
+.project-card:nth-last-child(n+2) {
+    margin-right: 3px;
 }
 
 /* --- SKILLS & TOOLS SECTION --- */
