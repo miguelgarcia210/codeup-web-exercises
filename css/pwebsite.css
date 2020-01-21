@@ -353,6 +353,7 @@ main {
     height: auto;
     display: grid;
     padding: 0 1.5em;
+    padding-bottom: 1em;
     margin-top: 1em;
 }
 
@@ -363,6 +364,7 @@ main {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scroll-padding: 1em;
+    padding-bottom: 1em;
 }
 
 /* --- remove scroll bar display ONLY for forecast-container --- */
@@ -378,6 +380,7 @@ main {
     width: 95%;
     background-color: green;
     border-radius: 1em;
+    box-shadow: 0 8px 6px -6px grey;
 }
 
 .project-card:nth-last-child(n+2) {
@@ -545,11 +548,4 @@ footer h3 {
 
 .f-copyright-stamp {
     color: #E1236E;
-}
-
-.test1 {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
